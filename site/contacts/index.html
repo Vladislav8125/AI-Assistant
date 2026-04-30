@@ -7,94 +7,172 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header class="header" id="header">
-    <a href="/" class="header__logo"><span>EWA.</span> Надежда. Любовь.</a>
-    <div class="hamburger" onclick="document.querySelector('.header__nav').classList.toggle('open')"><span></span><span></span><span></span></div>
-    <nav class="header__nav">
-      <a href="/about/">О фонде</a>
-      <a href="/initiatives/">Инициативы</a>
-      <a href="/reports/">Отчёты</a>
-      <a href="/news/">Новости</a>
-      <a href="/contacts/" class="active">Контакты</a>
-      <a href="/donate/" class="header__donate-btn">Помочь</a>
-    </nav>
-  </header>
-
-  <div class="page-header">
-    <h1 class="page-header__title">Контакты</h1>
+  <!-- Header -->
+  <div class="container">
+    <header class="header">
+      <a href="/" class="header__logo">
+        <div class="header__logo-icon">EWA</div>
+        <div class="header__logo-text">
+          <span class="header__logo-name">ewa. надежда. любовь.</span>
+          <span class="header__logo-subtitle">благотворительный фонд</span>
+        </div>
+      </a>
+      <nav class="header__nav" id="nav">
+        <a href="/initiatives/" class="header__nav-link">Инициативы</a>
+        <a href="/news/" class="header__nav-link">Новости</a>
+        <a href="/reports/" class="header__nav-link">Отчеты</a>
+        <a href="/about/" class="header__nav-link">О фонде</a>
+        <a href="/contacts/" class="header__nav-link active">Контакты</a>
+      </nav>
+      <div class="header__right">
+        <a href="#" class="header__login">Войти</a>
+        <a href="/donate/" class="header__ewa-btn">EWA +</a>
+      </div>
+      <div class="mobile-menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </header>
   </div>
 
-  <section class="section">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-item__icon"><span class="material-icons">phone</span></div>
-          <div>
-            <p class="contact-item__label">Телефон</p>
-            <p class="contact-item__value"><a href="tel:+79612167606">+7 (961) 216-76-06</a></p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item__icon"><span class="material-icons">email</span></div>
-          <div>
-            <p class="contact-item__label">e-Mail</p>
-            <p class="contact-item__value"><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item__icon"><span class="material-icons">place</span></div>
-          <div>
-            <p class="contact-item__label">Адрес</p>
-            <p class="contact-item__value">Россия, г. Новосибирск, Центральный район, ул. Фрунзе, д. 2Б</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item__icon"><span class="material-icons">schedule</span></div>
-          <div>
-            <p class="contact-item__label">Режим работы</p>
-            <p class="contact-item__value">пн-пт: 09:00 — 18:00</p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div style="background: var(--primary-light); border-radius: 16px; height: 300px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1rem;">
-          <span class="material-icons" style="font-size: 3rem; margin-right: 0.5rem;">map</span> Карта
-        </div>
-      </div>
+  <!-- Page Banner -->
+  <div class="container">
+    <div class="page-banner page-banner--red">
+      <h1 class="page-banner__title">Контакты</h1>
     </div>
-  </section>
+  </div>
 
-  <section class="section section--alt">
-    <h2 class="section__title">Реквизиты</h2>
-    <table class="requisites-table">
-      <tr><th>Полное наименование</th><td>Благотворительный общественно полезный фонд «Эва.Надежда.Любовь»</td></tr>
-      <tr><th>Краткое наименование</th><td>Фонд «Эва.Надежда.Любовь»</td></tr>
-      <tr><th>ИНН / КПП</th><td>54006840024 / 540601001</td></tr>
-      <tr><th>ОГРН</th><td>1245400014310</td></tr>
-      <tr><th>Юр. адрес</th><td>630091, г. Новосибирск, ул. Фрунзе д. 2Б</td></tr>
-      <tr><th>Email</th><td><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></td></tr>
-      <tr><th>Телефон</th><td>8(863)301-33-30</td></tr>
-      <tr><th>Р/счёт</th><td>40703810052090013575</td></tr>
-      <tr><th>Кор.счёт</th><td>30101810600000000602</td></tr>
-      <tr><th>БИК</th><td>046015602</td></tr>
-      <tr><th>Банк</th><td>Юго-Западный Банк ПАО Сбербанк</td></tr>
-      <tr><th>Директор</th><td>Сасса Влада Евгеньевна</td></tr>
-      <tr><th>Сайт</th><td><a href="https://ewahelps.com">https://ewahelps.com</a></td></tr>
-    </table>
-    <p style="margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.7;">
-      В назначении платежа в платежном поручении можно указать: «Благотворительный взнос» или «На благотворительную деятельность».
-    </p>
-  </section>
+  <!-- Contacts Section -->
+  <div class="container">
+    <section class="section">
+      <div class="contacts-section">
+        <div>
+          <div class="contact-block">
+            <div class="contact-block__label">Телефон</div>
+            <div class="contact-block__value"><a href="tel:+79612167606">+7 (961) 216-76-06</a></div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-block__label">e-Mail</div>
+            <div class="contact-block__value"><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-block__label">Адрес</div>
+            <div class="contact-block__value">Россия, г. Новосибирск, Центральный район, ул. Фрунзе, д. 2Б</div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-block__label">Режим работы</div>
+            <div class="contact-block__value">пн-пт: 09:00 - 18:00</div>
+          </div>
+          <div class="contact-block">
+            <div class="contact-block__label">Контакт для прессы</div>
+            <div class="contact-block__value"><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></div>
+          </div>
+        </div>
+        <div>
+          <div class="map-container">
+            📍 Карта — г. Новосибирск, ул. Фрунзе, д. 2Б
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
+  <!-- Requisites -->
+  <div class="container">
+    <section class="section">
+      <h2 class="section__title">Реквизиты</h2>
+      <table class="requisites-table">
+        <tr>
+          <td>Полное наименование</td>
+          <td>Благотворительный общественно полезный фонд «Эва.Надежда.Любовь»</td>
+        </tr>
+        <tr>
+          <td>Краткое наименование</td>
+          <td>Фонд «Эва.Надежда.Любовь»</td>
+        </tr>
+        <tr>
+          <td>ИНН/ КПП</td>
+          <td>54006840024/ 540601001</td>
+        </tr>
+        <tr>
+          <td>ОГРН</td>
+          <td>1245400014310</td>
+        </tr>
+        <tr>
+          <td>Юр/адрес</td>
+          <td>630091, г.Новосибирск, ул. Фрунзе д.2Б</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></td>
+        </tr>
+        <tr>
+          <td>Телефон</td>
+          <td><a href="tel:88633013330">8(863)301-33-30</a></td>
+        </tr>
+        <tr>
+          <td>Р/cчет</td>
+          <td>40703810052090013575</td>
+        </tr>
+        <tr>
+          <td>Кор.счет</td>
+          <td>30101810600000000602</td>
+        </tr>
+        <tr>
+          <td>БИК</td>
+          <td>046015602</td>
+        </tr>
+        <tr>
+          <td>Банк</td>
+          <td>Юго-Западный Банк ПАО Сбербанк</td>
+        </tr>
+        <tr>
+          <td>Директор</td>
+          <td>Сасса Влада Евгеньевна</td>
+        </tr>
+        <tr>
+          <td>сайт</td>
+          <td><a href="https://ewahelps.com" target="_blank">https://ewahelps.com</a></td>
+        </tr>
+      </table>
+      <p style="font-size: 13px; color: #555; margin-top: 24px; line-height: 1.6;">В назначении платежа в платежном поручении можно указать: «Благотворительный взнос» или «На благотворительную деятельность».</p>
+    </section>
+  </div>
+
+  <!-- Footer -->
   <footer class="footer">
-    <div class="footer__top">
-      <div><div class="footer__logo">EWA. Надежда. Любовь.</div><p class="footer__desc">Благотворительный фонд</p></div>
-      <div><h4 class="footer__heading">Навигация</h4><ul class="footer__links"><li><a href="/about/">О фонде</a></li><li><a href="/initiatives/">Инициативы</a></li><li><a href="/reports/">Отчёты</a></li><li><a href="/news/">Новости</a></li><li><a href="/contacts/">Контакты</a></li></ul></div>
-      <div><h4 class="footer__heading">Контакты</h4><ul class="footer__links"><li><a href="tel:+79612167606">+7 (961) 216-76-06</a></li><li><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></li><li>г. Новосибирск, ул. Фрунзе, д. 2Б</li></ul></div>
+    <div class="container">
+      <div class="footer__nav">
+        <a href="/initiatives/" class="footer__nav-link">Инициативы</a>
+        <a href="/news/" class="footer__nav-link">Новости</a>
+        <a href="/reports/" class="footer__nav-link">Отчеты</a>
+        <a href="/about/" class="footer__nav-link">О фонде</a>
+        <a href="/contacts/" class="footer__nav-link">Контакты</a>
+        <a href="/privacy-police/" class="footer__nav-link">Политика конфиденциальности</a>
+        <a href="/public-offer/" class="footer__nav-link">Публичная оферта</a>
+      </div>
+      <div class="footer__logo">
+        <div class="footer__logo-text">ewa.<br>надежда.<br>любовь.</div>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__social">
+          <a href="#" class="footer__social-icon">TG</a>
+          <a href="#" class="footer__social-icon">VK</a>
+        </div>
+        <a href="mailto:info@ewahelps.com" class="footer__contact-link">info@ewahelps.com</a>
+        <a href="tel:+79612167606" class="footer__contact-link">+7 (961) 216-76-06</a>
+      </div>
     </div>
-    <div class="footer__bottom"><span>© 2024 Фонд «Эва.Надежда.Любовь»</span><span><a href="/privacy-police/" style="color:rgba(255,255,255,.6)">Политика конфиденциальности</a> · <a href="/public-offer/" style="color:rgba(255,255,255,.6)">Публичная оферта</a></span></div>
   </footer>
-  <div class="cookie-banner" id="cookieBanner"><p>Этот сайт использует cookie!</p><button onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button></div>
-  <script>window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>10)})</script>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner__inner">
+      <div>
+        <div class="cookie-banner__title">Этот сайт использует cookie!</div>
+        <div class="cookie-banner__text">Продолжая просматривать сайт, вы соглашаетесь на использование cookie в соответствии с политикой.</div>
+      </div>
+      <button class="cookie-banner__btn" onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+    </div>
+  </div>
 </body>
 </html>

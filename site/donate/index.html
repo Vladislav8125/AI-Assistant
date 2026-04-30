@@ -3,84 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Помочь — EWA. Надежда. Любовь.</title>
+  <title>Пожертвование — EWA. Надежда. Любовь.</title>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header class="header" id="header">
-    <a href="/" class="header__logo"><span>EWA.</span> Надежда. Любовь.</a>
-    <div class="hamburger" onclick="document.querySelector('.header__nav').classList.toggle('open')"><span></span><span></span><span></span></div>
-    <nav class="header__nav">
-      <a href="/about/">О фонде</a>
-      <a href="/initiatives/">Инициативы</a>
-      <a href="/reports/">Отчёты</a>
-      <a href="/news/">Новости</a>
-      <a href="/contacts/">Контакты</a>
-      <a href="/donate/" class="header__donate-btn">Помочь</a>
-    </nav>
-  </header>
-
-  <div style="margin-top: var(--header-height); padding: 2rem var(--container-padding);">
-    <a href="/" class="back-link">← перейти на главную</a>
+  <!-- Header -->
+  <div class="container">
+    <header class="header">
+      <a href="/" class="header__logo">
+        <div class="header__logo-icon">EWA</div>
+        <div class="header__logo-text">
+          <span class="header__logo-name">ewa. надежда. любовь.</span>
+          <span class="header__logo-subtitle">благотворительный фонд</span>
+        </div>
+      </a>
+      <nav class="header__nav" id="nav">
+        <a href="/initiatives/" class="header__nav-link">Инициативы</a>
+        <a href="/news/" class="header__nav-link">Новости</a>
+        <a href="/reports/" class="header__nav-link">Отчеты</a>
+        <a href="/about/" class="header__nav-link">О фонде</a>
+        <a href="/contacts/" class="header__nav-link">Контакты</a>
+      </nav>
+      <div class="header__right">
+        <a href="#" class="header__login">Войти</a>
+        <a href="/donate/" class="header__ewa-btn">EWA +</a>
+      </div>
+      <div class="mobile-menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </header>
   </div>
 
-  <section class="section" style="padding-top: 0;">
-    <div class="donate-container">
-      <h2 class="section__title" style="text-align: center;">Быстрое пожертвование</h2>
-      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
-        Фонд сам выберет на какую инициативу направить ваше пожертвование. Разовое пожертвование.
-      </p>
-
+  <!-- Donate Page -->
+  <div class="container">
+    <a href="/" class="donate-page__back">← перейти на главную</a>
+    <div class="donate-page">
+      <!-- Tabs -->
       <div class="donate-tabs">
-        <button class="donate-tab active" onclick="selectTab(this)">Быстрое пожертвование</button>
-        <button class="donate-tab" onclick="selectTab(this)">Подписка</button>
+        <button class="donate-tab active" data-tab="once" onclick="switchTab('once')">Быстрое пожертвование</button>
+        <button class="donate-tab" data-tab="subscription" onclick="switchTab('subscription')">Подписка</button>
       </div>
 
-      <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">Варианты пожертвования</h3>
-      <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">Выберите сумму</p>
+      <p style="font-size: 14px; color: #555; margin-bottom: 30px; line-height: 1.6;">Фонд сам выберет на какую инициативу направить ваше пожертвование. Разовое пожертвование.</p>
 
+      <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Варианты пожертвования</h2>
+      <p style="font-size: 14px; color: #999; margin-bottom: 20px;">Выберите сумму</p>
+
+      <!-- Amount Buttons -->
       <div class="donate-amounts">
-        <button class="donate-amount" onclick="selectAmount(this, 325)">325 ₽</button>
-        <button class="donate-amount" onclick="selectAmount(this, 750)">750 ₽</button>
-        <button class="donate-amount active" onclick="selectAmount(this, 1000)">1 000 ₽</button>
-        <button class="donate-amount" onclick="selectAmount(this, 3000)">3 000 ₽</button>
+        <button class="donate-amount" data-amount="325" onclick="selectAmount(this)">325 ₽</button>
+        <button class="donate-amount" data-amount="750" onclick="selectAmount(this)">750 ₽</button>
+        <button class="donate-amount" data-amount="1000" onclick="selectAmount(this)">1 000 ₽</button>
+        <button class="donate-amount" data-amount="3000" onclick="selectAmount(this)">3 000 ₽</button>
       </div>
 
-      <p class="donate-summary">Вы выбрали разовое пожертвование в размере <strong id="selectedAmount">1 000</strong> ₽</p>
+      <!-- Summary -->
+      <div class="donate-summary">
+        Вы выбрали разовое пожертвование в размере
+        <strong id="donateAmount">0 ₽</strong>
+      </div>
 
-      <a href="#" class="btn btn--blue" style="width: 100%; justify-content: center; margin-bottom: 1.5rem;">Перейти к оплате</a>
+      <!-- Pay Button -->
+      <div style="text-align: center; margin-bottom: 16px;">
+        <a href="#" class="btn btn--solid" style="width: 100%; justify-content: center;">Перейти к оплате</a>
+      </div>
 
-      <p class="donate-legal">
-        Переходя по кнопке вы подтверждаете, что ознакомились и принимаете условия 
-        <a href="/privacy-police/">Политики конфиденциальности</a> Фонда и 
-        <a href="/public-offer/">Публичной оферты</a> пожертвования Фонда в полном объеме.
-      </p>
+      <!-- Legal -->
+      <div class="donate-legal">
+        Нажимая на кнопку «Перейти к оплате», вы соглашаетесь с
+        <a href="/privacy-police/">политикой конфиденциальности</a> и
+        <a href="/public-offer/">публичной офертой</a>.
+      </div>
 
-      <p style="font-size: 0.8rem; color: var(--text-secondary);">Техническая поддержка</p>
+      <p style="font-size: 12px; color: #999; text-align: center; margin-top: 20px;">Техническая поддержка</p>
     </div>
-  </section>
+  </div>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="footer__top">
-      <div><div class="footer__logo">EWA. Надежда. Любовь.</div></div>
-      <div><h4 class="footer__heading">Навигация</h4><ul class="footer__links"><li><a href="/about/">О фонде</a></li><li><a href="/initiatives/">Инициативы</a></li><li><a href="/contacts/">Контакты</a></li></ul></div>
-      <div><h4 class="footer__heading">Контакты</h4><ul class="footer__links"><li><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></li></ul></div>
+    <div class="container">
+      <div class="footer__nav">
+        <a href="/initiatives/" class="footer__nav-link">Инициативы</a>
+        <a href="/news/" class="footer__nav-link">Новости</a>
+        <a href="/reports/" class="footer__nav-link">Отчеты</a>
+        <a href="/about/" class="footer__nav-link">О фонде</a>
+        <a href="/contacts/" class="footer__nav-link">Контакты</a>
+        <a href="/privacy-police/" class="footer__nav-link">Политика конфиденциальности</a>
+        <a href="/public-offer/" class="footer__nav-link">Публичная оферта</a>
+      </div>
+      <div class="footer__logo">
+        <div class="footer__logo-text">ewa.<br>надежда.<br>любовь.</div>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__social">
+          <a href="#" class="footer__social-icon">TG</a>
+          <a href="#" class="footer__social-icon">VK</a>
+        </div>
+        <a href="mailto:info@ewahelps.com" class="footer__contact-link">info@ewahelps.com</a>
+        <a href="tel:+79612167606" class="footer__contact-link">+7 (961) 216-76-06</a>
+      </div>
     </div>
-    <div class="footer__bottom"><span>© 2024 Фонд «Эва.Надежда.Любовь»</span></div>
   </footer>
 
-  <div class="cookie-banner" id="cookieBanner"><p>Этот сайт использует cookie!</p><button onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button></div>
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner__inner">
+      <div>
+        <div class="cookie-banner__title">Этот сайт использует cookie!</div>
+        <div class="cookie-banner__text">Продолжая просматривать сайт, вы соглашаетесь на использование cookie в соответствии с политикой.</div>
+      </div>
+      <button class="cookie-banner__btn" onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+    </div>
+  </div>
 
   <script>
-    window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>10)});
-    function selectTab(el) {
-      document.querySelectorAll('.donate-tab').forEach(t => t.classList.remove('active'));
-      el.classList.add('active');
+    var selectedAmount = 0;
+
+    function selectAmount(btn) {
+      document.querySelectorAll('.donate-amount').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+      selectedAmount = parseInt(btn.getAttribute('data-amount'));
+      document.getElementById('donateAmount').textContent = selectedAmount.toLocaleString('ru-RU') + ' ₽';
     }
-    function selectAmount(el, amount) {
-      document.querySelectorAll('.donate-amount').forEach(a => a.classList.remove('active'));
-      el.classList.add('active');
-      document.getElementById('selectedAmount').textContent = amount.toLocaleString('ru-RU');
+
+    function switchTab(tab) {
+      document.querySelectorAll('.donate-tab').forEach(function(t) {
+        t.classList.remove('active');
+      });
+      document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
     }
   </script>
 </body>

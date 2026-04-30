@@ -7,91 +7,127 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header class="header" id="header">
-    <a href="/" class="header__logo"><span>EWA.</span> Надежда. Любовь.</a>
-    <div class="hamburger" onclick="document.querySelector('.header__nav').classList.toggle('open')"><span></span><span></span><span></span></div>
-    <nav class="header__nav">
-      <a href="/about/">О фонде</a>
-      <a href="/initiatives/">Инициативы</a>
-      <a href="/reports/">Отчёты</a>
-      <a href="/news/" class="active">Новости</a>
-      <a href="/contacts/">Контакты</a>
-      <a href="/donate/" class="header__donate-btn">Помочь</a>
-    </nav>
-  </header>
-
-  <div class="page-header">
-    <h1 class="page-header__title">Новости</h1>
+  <!-- Header -->
+  <div class="container">
+    <header class="header">
+      <a href="/" class="header__logo">
+        <div class="header__logo-icon">EWA</div>
+        <div class="header__logo-text">
+          <span class="header__logo-name">ewa. надежда. любовь.</span>
+          <span class="header__logo-subtitle">благотворительный фонд</span>
+        </div>
+      </a>
+      <nav class="header__nav" id="nav">
+        <a href="/initiatives/" class="header__nav-link">Инициативы</a>
+        <a href="/news/" class="header__nav-link active">Новости</a>
+        <a href="/reports/" class="header__nav-link">Отчеты</a>
+        <a href="/about/" class="header__nav-link">О фонде</a>
+        <a href="/contacts/" class="header__nav-link">Контакты</a>
+      </nav>
+      <div class="header__right">
+        <a href="#" class="header__login">Войти</a>
+        <a href="/donate/" class="header__ewa-btn">EWA +</a>
+      </div>
+      <div class="mobile-menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </header>
   </div>
 
-  <section class="section">
-    <div class="news-list">
-      <div class="news-item">
-        <div class="news-item__date">11 ноя<br>2024</div>
-        <div class="news-item__content">
-          <h3 class="news-item__title">Официальная презентация фонда</h3>
-          <p class="news-item__text">12 октября на Дне рождении компании EWA PRODUCT, нашего генерального партнера, состоялась официальная презентация фонда.</p>
-        </div>
-      </div>
-      <div class="news-item">
-        <div class="news-item__date">1 окт<br>2024</div>
-        <div class="news-item__content">
-          <h3 class="news-item__title">Приглашаем в наше доброе сообщество</h3>
-          <p class="news-item__text">Приглашаем вас в наше доброе сообщество, где каждый может сделать хороший поступок в том городе, в котором вы живете.</p>
-        </div>
-      </div>
-      <div class="news-item">
-        <div class="news-item__date">1 окт<br>2024</div>
-        <div class="news-item__content">
-          <h3 class="news-item__title">Обращайтесь к нам за помощью</h3>
-          <p class="news-item__text">Вы можете обратиться к нам по телефону 8(863)301-33-30. И мы придумаем как и чем мы сможем помочь.</p>
-        </div>
-      </div>
-      <div class="news-item">
-        <div class="news-item__date">1 окт<br>2024</div>
-        <div class="news-item__content">
-          <h3 class="news-item__title">Начинаем сбор средств на благотворительные инициативы</h3>
-          <p class="news-item__text">Мы запускаем сбор средств для поддержки важнейших благотворительных проектов. Каждое ваше участие поможет тем, кто нуждается в помощи.</p>
-        </div>
-      </div>
+  <!-- Page Banner -->
+  <div class="container">
+    <div class="page-banner page-banner--red">
+      <h1 class="page-banner__title">Новости</h1>
     </div>
-  </section>
+  </div>
 
+  <!-- News Cards -->
+  <div class="container">
+    <section class="section">
+      <div class="news-grid">
+        <!-- News 1 -->
+        <div class="news-card">
+          <div class="news-card__image-placeholder" style="background: linear-gradient(135deg, #e8d8d4, #d4b8b0);">
+            📰
+          </div>
+          <div class="news-card__body">
+            <div class="news-card__date">11 ноября 2024</div>
+            <div class="news-card__title">12 октября на Дне рождении компании EWA PRODUCT, нашего генерального партнера, состоялась официальная презентация фонда.</div>
+          </div>
+        </div>
+
+        <!-- News 2 -->
+        <div class="news-card">
+          <div class="news-card__image-placeholder" style="background: linear-gradient(135deg, #d8e0d4, #b8c8a8);">
+            🤝
+          </div>
+          <div class="news-card__body">
+            <div class="news-card__date">1 октября 2024</div>
+            <div class="news-card__title">Приглашаем вас в наше доброе сообщество, где каждый может сделать хороший поступок в том городе, в котором вы живете</div>
+          </div>
+        </div>
+
+        <!-- News 3 -->
+        <div class="news-card">
+          <div class="news-card__image-placeholder" style="background: linear-gradient(135deg, #d4d8e8, #b0b8c8);">
+            📞
+          </div>
+          <div class="news-card__body">
+            <div class="news-card__date">1 октября 2024</div>
+            <div class="news-card__title">Вы можете обратиться к нам по телефону 8(863)301-33-30. И мы придумаем как и чем мы сможем помочь</div>
+          </div>
+        </div>
+
+        <!-- News 4 -->
+        <div class="news-card">
+          <div class="news-card__image-placeholder" style="background: linear-gradient(135deg, #e4dcd8, #c8b8a8);">
+            💰
+          </div>
+          <div class="news-card__body">
+            <div class="news-card__date">1 октября 2024</div>
+            <div class="news-card__title">Начинаем сбор средств на благотворительные инициативы</div>
+            <div class="news-card__text">Мы запускаем сбор средств для поддержки важнейших благотворительных проектов. Каждое ваше участие поможет тем, кто нуждается в помощи.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
   <footer class="footer">
-    <div class="footer__top">
-      <div>
-        <div class="footer__logo">EWA. Надежда. Любовь.</div>
-        <p class="footer__desc">Благотворительный общественно полезный фонд «Эва.Надежда.Любовь».</p>
+    <div class="container">
+      <div class="footer__nav">
+        <a href="/initiatives/" class="footer__nav-link">Инициативы</a>
+        <a href="/news/" class="footer__nav-link">Новости</a>
+        <a href="/reports/" class="footer__nav-link">Отчеты</a>
+        <a href="/about/" class="footer__nav-link">О фонде</a>
+        <a href="/contacts/" class="footer__nav-link">Контакты</a>
+        <a href="/privacy-police/" class="footer__nav-link">Политика конфиденциальности</a>
+        <a href="/public-offer/" class="footer__nav-link">Публичная оферта</a>
       </div>
-      <div>
-        <h4 class="footer__heading">Навигация</h4>
-        <ul class="footer__links">
-          <li><a href="/about/">О фонде</a></li>
-          <li><a href="/initiatives/">Инициативы</a></li>
-          <li><a href="/reports/">Отчёты</a></li>
-          <li><a href="/news/">Новости</a></li>
-          <li><a href="/contacts/">Контакты</a></li>
-        </ul>
+      <div class="footer__logo">
+        <div class="footer__logo-text">ewa.<br>надежда.<br>любовь.</div>
       </div>
-      <div>
-        <h4 class="footer__heading">Контакты</h4>
-        <ul class="footer__links">
-          <li><a href="tel:+79612167606">+7 (961) 216-76-06</a></li>
-          <li><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></li>
-          <li>г. Новосибирск, ул. Фрунзе, д. 2Б</li>
-        </ul>
+      <div class="footer__contacts">
+        <div class="footer__social">
+          <a href="#" class="footer__social-icon">TG</a>
+          <a href="#" class="footer__social-icon">VK</a>
+        </div>
+        <a href="mailto:info@ewahelps.com" class="footer__contact-link">info@ewahelps.com</a>
+        <a href="tel:+79612167606" class="footer__contact-link">+7 (961) 216-76-06</a>
       </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© 2024 Фонд «Эва.Надежда.Любовь»</span>
-      <span><a href="/privacy-police/" style="color:rgba(255,255,255,.6)">Политика конфиденциальности</a> · <a href="/public-offer/" style="color:rgba(255,255,255,.6)">Публичная оферта</a></span>
     </div>
   </footer>
 
+  <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
-    <p>Этот сайт использует cookie!</p>
-    <button onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+    <div class="cookie-banner__inner">
+      <div>
+        <div class="cookie-banner__title">Этот сайт использует cookie!</div>
+        <div class="cookie-banner__text">Продолжая просматривать сайт, вы соглашаетесь на использование cookie в соответствии с политикой.</div>
+      </div>
+      <button class="cookie-banner__btn" onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+    </div>
   </div>
-  <script>window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>10)})</script>
 </body>
 </html>

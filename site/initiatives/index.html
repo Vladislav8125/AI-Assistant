@@ -7,132 +7,222 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header class="header" id="header">
-    <a href="/" class="header__logo"><span>EWA.</span> Надежда. Любовь.</a>
-    <div class="hamburger" onclick="document.querySelector('.header__nav').classList.toggle('open')"><span></span><span></span><span></span></div>
-    <nav class="header__nav">
-      <a href="/about/">О фонде</a>
-      <a href="/initiatives/" class="active">Инициативы</a>
-      <a href="/reports/">Отчёты</a>
-      <a href="/news/">Новости</a>
-      <a href="/contacts/">Контакты</a>
-      <a href="/donate/" class="header__donate-btn">Помочь</a>
-    </nav>
-  </header>
-
-  <div class="page-header">
-    <h1 class="page-header__title">Инициативы</h1>
+  <!-- Header -->
+  <div class="container">
+    <header class="header">
+      <a href="/" class="header__logo">
+        <div class="header__logo-icon">EWA</div>
+        <div class="header__logo-text">
+          <span class="header__logo-name">ewa. надежда. любовь.</span>
+          <span class="header__logo-subtitle">благотворительный фонд</span>
+        </div>
+      </a>
+      <nav class="header__nav" id="nav">
+        <a href="/initiatives/" class="header__nav-link active">Инициативы</a>
+        <a href="/news/" class="header__nav-link">Новости</a>
+        <a href="/reports/" class="header__nav-link">Отчеты</a>
+        <a href="/about/" class="header__nav-link">О фонде</a>
+        <a href="/contacts/" class="header__nav-link">Контакты</a>
+      </nav>
+      <div class="header__right">
+        <a href="#" class="header__login">Войти</a>
+        <a href="/donate/" class="header__ewa-btn">EWA +</a>
+      </div>
+      <div class="mobile-menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </header>
   </div>
 
-  <section class="section">
-    <div class="cards-grid">
-      <div class="card">
-        <div class="card__image" style="background:linear-gradient(135deg,#e8f0fe,#d7e3ff);display:flex;align-items:center;justify-content:center;font-size:3rem;">🐾</div>
-        <div class="card__body">
-          <span class="card__tag">Помощь животным</span>
-          <h3 class="card__title">2 гектара надежды!</h3>
-          <div class="progress-bar">
-            <div class="progress-bar__track"><div class="progress-bar__fill" style="width:22.5%"></div></div>
-            <div class="progress-bar__info"><span class="progress-bar__amount">90 314 ₽</span><span>из 400 000 ₽</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__image" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);display:flex;align-items:center;justify-content:center;font-size:3rem;">👦</div>
-        <div class="card__body">
-          <span class="card__tag">Помощь детям</span>
-          <h3 class="card__title">Большие мечты маленького героя: помощь мальчику Вите</h3>
-          <p class="card__text">Оплата курса реабилитации</p>
-          <div class="progress-bar">
-            <div class="progress-bar__track"><div class="progress-bar__fill" style="width:13.8%"></div></div>
-            <div class="progress-bar__info"><span class="progress-bar__amount">34 600 ₽</span><span>из 250 000 ₽</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__image" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center;font-size:3rem;">👧</div>
-        <div class="card__body">
-          <span class="card__tag">Помощь детям</span>
-          <h3 class="card__title">Поможем Еве на пути к полноценной жизни!</h3>
-          <p class="card__text">Оплата курса реабилитации и коррекционного центра</p>
-          <div class="progress-bar">
-            <div class="progress-bar__track"><div class="progress-bar__fill" style="width:41.6%"></div></div>
-            <div class="progress-bar__info"><span class="progress-bar__amount">104 071 ₽</span><span>из 250 000 ₽</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__image" style="background:linear-gradient(135deg,#fff3e0,#ffe0b2);display:flex;align-items:center;justify-content:center;font-size:3rem;">🦁</div>
-        <div class="card__body">
-          <span class="card__tag">Интеграционный центр "Лев"</span>
-          <h3 class="card__title">Обновление интерьерного пространства Центра "Лев"</h3>
-          <p class="card__text">На обновление мебели и косметический ремонт центра</p>
-          <div class="progress-bar">
-            <div class="progress-bar__track"><div class="progress-bar__fill" style="width:22.3%"></div></div>
-            <div class="progress-bar__info"><span class="progress-bar__amount">55 795 ₽</span><span>из 250 000 ₽</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__image" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);display:flex;align-items:center;justify-content:center;font-size:3rem;">🧒</div>
-        <div class="card__body">
-          <span class="card__tag">Детский дом г.Новошахтинск</span>
-          <h3 class="card__title">Мир без тревог: поможем детям Новошахтинска обрести эмоциональную опору</h3>
-          <p class="card__text">На интерактивную систему Pogumax Designer</p>
-          <div class="progress-bar">
-            <div class="progress-bar__track"><div class="progress-bar__fill" style="width:13%"></div></div>
-            <div class="progress-bar__info"><span class="progress-bar__amount">57 339 ₽</span><span>из 440 000 ₽</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__image" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7);display:flex;align-items:center;justify-content:center;font-size:3rem;">🏠</div>
-        <div class="card__body">
-          <span class="card__tag">Детский дом №2 г.Барнаул</span>
-          <h3 class="card__title">Создаём уют и комфортные условия</h3>
-          <p class="card__text">На обновление жилищных условий</p>
-          <div class="progress-bar">
-            <div class="progress-bar__track"><div class="progress-bar__fill" style="width:18.2%"></div></div>
-            <div class="progress-bar__info"><span class="progress-bar__amount">67 254 ₽</span><span>из 370 000 ₽</span></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card__image" style="background:linear-gradient(135deg,#e8eaf6,#c5cae9);display:flex;align-items:center;justify-content:center;font-size:3rem;">🏡</div>
-        <div class="card__body">
-          <span class="card__tag">Детский дом №3 г.Барнаул</span>
-          <h3 class="card__title">Создаём уют и комфортные условия</h3>
-          <p class="card__text">На перегородки в детские комнаты</p>
-          <div class="progress-bar">
-            <div class="progress-bar__track"><div class="progress-bar__fill" style="width:98.4%"></div></div>
-            <div class="progress-bar__info"><span class="progress-bar__amount">433 162 ₽</span><span>из 440 000 ₽</span></div>
-          </div>
-        </div>
-      </div>
+  <!-- Page Banner -->
+  <div class="container">
+    <div class="page-banner page-banner--red">
+      <h1 class="page-banner__title">Инициативы</h1>
     </div>
-  </section>
+  </div>
 
+  <!-- Initiative Cards -->
+  <div class="container">
+    <section class="section">
+      <div class="cards-grid">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #f0e6d8, #d4c4b0);">
+            🐾
+            <span class="card__heart">❤️</span>
+          </div>
+          <div class="card__body">
+            <div class="card__title">2 гектара надежды!</div>
+            <div class="card__subtitle">Помощь животным</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:22.5%"></div></div>
+              <div class="progress__info"><span class="progress__collected">90 314 ₽</span><span>из 400 000 ₽</span></div>
+            </div>
+            <div class="card__buttons">
+              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #e8ddd4, #d4c0ab);">
+            👦
+            <span class="card__heart">❤️</span>
+          </div>
+          <div class="card__body">
+            <div class="card__title">Большие мечты маленького героя: помощь мальчику Вите.</div>
+            <div class="card__subtitle">Помощь детям · Оплата курса реабилитации</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:13.8%"></div></div>
+              <div class="progress__info"><span class="progress__collected">34 600 ₽</span><span>из 250 000 ₽</span></div>
+            </div>
+            <div class="card__buttons">
+              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #dce4d8, #b8c8a8);">
+            👧
+            <span class="card__heart">❤️</span>
+          </div>
+          <div class="card__body">
+            <div class="card__title">Поможем Еве на пути к полноценной жизни!</div>
+            <div class="card__subtitle">Помощь детям · Оплата курса реабилитации и коррекционного центра</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:41.6%"></div></div>
+              <div class="progress__info"><span class="progress__collected">104 071 ₽</span><span>из 250 000 ₽</span></div>
+            </div>
+            <div class="card__buttons">
+              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #e0d8d4, #c8b8b0);">
+            🦁
+            <span class="card__heart">❤️</span>
+          </div>
+          <div class="card__body">
+            <div class="card__title">Обновление интерьерного пространства Центра "Лев"</div>
+            <div class="card__subtitle">Интеграционный центр "Лев" · На обновление мебели и косметический ремонт центра</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:22.3%"></div></div>
+              <div class="progress__info"><span class="progress__collected">55 795 ₽</span><span>из 250 000 ₽</span></div>
+            </div>
+            <div class="card__buttons">
+              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card">
+          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #d8e0e4, #b0c0c8);">
+            🧒
+            <span class="card__heart">❤️</span>
+          </div>
+          <div class="card__body">
+            <div class="card__title">Мир без тревог: поможем детям Новошахтинска обрести эмоциональную опору</div>
+            <div class="card__subtitle">Детский дом г.Новошахтинск · На интерактивную систему Pogumax Designer</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:13%"></div></div>
+              <div class="progress__info"><span class="progress__collected">57 339 ₽</span><span>из 440 000 ₽</span></div>
+            </div>
+            <div class="card__buttons">
+              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card">
+          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #e4dcd8, #c8b8a8);">
+            🏠
+            <span class="card__heart">❤️</span>
+          </div>
+          <div class="card__body">
+            <div class="card__title">Создаём уют и комфортные условия</div>
+            <div class="card__subtitle">Детский дом №2 г.Барнаул · На обновление жилищных условий</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:18.2%"></div></div>
+              <div class="progress__info"><span class="progress__collected">67 254 ₽</span><span>из 370 000 ₽</span></div>
+            </div>
+            <div class="card__buttons">
+              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="card">
+          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #d8e4d8, #b0c8a8);">
+            🏡
+            <span class="card__heart">❤️</span>
+          </div>
+          <div class="card__body">
+            <div class="card__title">Создаём уют и комфортные условия</div>
+            <div class="card__subtitle">Детский дом №3 г.Барнаул · На перегородки в детские комнаты</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:98.4%"></div></div>
+              <div class="progress__info"><span class="progress__collected">433 162 ₽</span><span>из 440 000 ₽</span></div>
+            </div>
+            <div class="card__buttons">
+              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
   <footer class="footer">
-    <div class="footer__top">
-      <div><div class="footer__logo">EWA. Надежда. Любовь.</div><p class="footer__desc">Благотворительный фонд</p></div>
-      <div>
-        <h4 class="footer__heading">Навигация</h4>
-        <ul class="footer__links"><li><a href="/about/">О фонде</a></li><li><a href="/initiatives/">Инициативы</a></li><li><a href="/reports/">Отчёты</a></li><li><a href="/news/">Новости</a></li><li><a href="/contacts/">Контакты</a></li></ul>
+    <div class="container">
+      <div class="footer__nav">
+        <a href="/initiatives/" class="footer__nav-link">Инициативы</a>
+        <a href="/news/" class="footer__nav-link">Новости</a>
+        <a href="/reports/" class="footer__nav-link">Отчеты</a>
+        <a href="/about/" class="footer__nav-link">О фонде</a>
+        <a href="/contacts/" class="footer__nav-link">Контакты</a>
+        <a href="/privacy-police/" class="footer__nav-link">Политика конфиденциальности</a>
+        <a href="/public-offer/" class="footer__nav-link">Публичная оферта</a>
       </div>
-      <div>
-        <h4 class="footer__heading">Контакты</h4>
-        <ul class="footer__links"><li><a href="tel:+79612167606">+7 (961) 216-76-06</a></li><li><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></li><li>г. Новосибирск, ул. Фрунзе, д. 2Б</li></ul>
+      <div class="footer__logo">
+        <div class="footer__logo-text">ewa.<br>надежда.<br>любовь.</div>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__social">
+          <a href="#" class="footer__social-icon">TG</a>
+          <a href="#" class="footer__social-icon">VK</a>
+        </div>
+        <a href="mailto:info@ewahelps.com" class="footer__contact-link">info@ewahelps.com</a>
+        <a href="tel:+79612167606" class="footer__contact-link">+7 (961) 216-76-06</a>
       </div>
     </div>
-    <div class="footer__bottom"><span>© 2024 Фонд «Эва.Надежда.Любовь»</span><span><a href="/privacy-police/" style="color:rgba(255,255,255,.6)">Политика конфиденциальности</a> · <a href="/public-offer/" style="color:rgba(255,255,255,.6)">Публичная оферта</a></span></div>
   </footer>
-  <div class="cookie-banner" id="cookieBanner"><p>Этот сайт использует cookie!</p><button onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button></div>
-  <script>window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>10)})</script>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner__inner">
+      <div>
+        <div class="cookie-banner__title">Этот сайт использует cookie!</div>
+        <div class="cookie-banner__text">Продолжая просматривать сайт, вы соглашаетесь на использование cookie в соответствии с политикой.</div>
+      </div>
+      <button class="cookie-banner__btn" onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+    </div>
+  </div>
 </body>
 </html>
