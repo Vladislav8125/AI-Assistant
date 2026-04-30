@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EWA. Надежда. Любовь.</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <div class="container">
+    <header class="header">
+      <a href="../" class="header__logo">
+        <div class="header__logo-icon">EWA</div>
+        <div class="header__logo-text">
+          <span class="header__logo-name">ewa. надежда. любовь.</span>
+          <span class="header__logo-subtitle">благотворительный фонд</span>
+        </div>
+      </a>
+      <nav class="header__nav" id="nav">
+        <a href="../initiatives/" class="header__nav-link">Инициативы</a>
+        <a href="../news/" class="header__nav-link">Новости</a>
+        <a href="../reports/" class="header__nav-link">Отчеты</a>
+        <a href="../about/" class="header__nav-link">О фонде</a>
+        <a href="../contacts/" class="header__nav-link">Контакты</a>
+      </nav>
+      <div class="header__right">
+        <a href="javascript:void(0)" class="header__login">Войти</a>
+        <a href="../donate/" class="header__ewa-btn">EWA +</a>
+      </div>
+      <div class="mobile-menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </header>
+  </div>
+
+  <!-- Donate Widget -->
+  <div class="container">
+    <div style="background:#f8f8f8;border-radius:20px;padding:30px;margin-bottom:40px;max-width:400px;">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Быстрое пожертвование</h3>
+      <p style="font-size:13px;color:#656565;margin-bottom:16px;">Выберите один из предложенных вариантов или впишите сумму на своё усмотрение</p>
+      <div class="donate-amounts" style="grid-template-columns:repeat(4,1fr);display:grid;gap:8px;margin-bottom:16px;">
+        <button class="donate-amount" onclick="selectAmount(this,325)">325 ₽</button>
+        <button class="donate-amount" onclick="selectAmount(this,750)">750 ₽</button>
+        <button class="donate-amount active" onclick="selectAmount(this,1000)">1 000 ₽</button>
+        <button class="donate-amount" onclick="selectAmount(this,3000)">3 000 ₽</button>
+      </div>
+      <a href="../donate/" class="btn btn--solid" style="width:100%;justify-content:center;">Помочь</a>
+    </div>
+  </div>
+
+  <!-- Quote from Founder -->
+  <div class="container">
+    <section class="section" style="max-width:800px;">
+      <div style="font-size:clamp(18px,2.5vw,28px);line-height:1.7;color:#333;margin-bottom:30px;">
+        <p style="margin-bottom:16px;"><strong>Человек</strong> — то, вокруг чего построена наша компания.</p>
+        <p style="margin-bottom:16px;">Мы создаём продукты чтобы делать жизни людей лучше и делаем лучше жизни тех, кто меняет этот мир вместе с нами.</p>
+        <p style="margin-bottom:16px;">Наши люди часто слышат слова благодарности и знают каково это — давать людям надежду и получать искреннюю безусловную любовь.</p>
+        <p style="margin-bottom:16px;">Чтобы продолжить аккумулировать тот положительный заряд, который мы зовём Эвой, создан благотворительный фонд.</p>
+        <p style="margin-bottom:24px;">Он так и называется — <strong>Эва. Надежда. Любовь.</strong></p>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="font-size:16px;font-weight:600;">Виталий Коваль,</div>
+        <div style="font-size:14px;color:#656565;">основатель</div>
+      </div>
+      <a href="../about/" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#c8394b;">перейти в раздел ›</a>
+    </section>
+  </div>
+
+  <!-- Initiatives Carousel -->
+  <div class="container">
+    <section class="section">
+      <h2 class="section__title">Инициативы</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card__image-placeholder" style="background:linear-gradient(135deg,#f0e6d8,#d4c4b0);">🐾<span class="card__heart">❤️</span></div>
+          <div class="card__body">
+            <div class="card__subtitle">Помощь животным</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:22.5%"></div></div>
+              <div class="progress__info"><span class="progress__collected">90 314 ₽</span><span>из 400 000 ₽</span></div>
+            </div>
+            <div class="card__title">2 гектара надежды!</div>
+            <div class="card__buttons"><a href="../initiatives/" class="btn btn--outline btn--small">Подробнее</a></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__image-placeholder" style="background:linear-gradient(135deg,#e8ddd4,#d4c0ab);">👦<span class="card__heart">❤️</span></div>
+          <div class="card__body">
+            <div class="card__subtitle">Помощь детям</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:13.8%"></div></div>
+              <div class="progress__info"><span class="progress__collected">34 600 ₽</span><span>из 250 000 ₽</span></div>
+            </div>
+            <div class="card__title">Большие мечты маленького героя: помощь мальчику Вите.</div>
+            <div class="card__buttons"><a href="../initiative/13/" class="btn btn--outline btn--small">Подробнее</a></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__image-placeholder" style="background:linear-gradient(135deg,#dce4d8,#b8c8a8);">👧<span class="card__heart">❤️</span></div>
+          <div class="card__body">
+            <div class="card__subtitle">Помощь детям</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:41.6%"></div></div>
+              <div class="progress__info"><span class="progress__collected">104 071 ₽</span><span>из 250 000 ₽</span></div>
+            </div>
+            <div class="card__title">Поможем Еве на пути к полноценной жизни!</div>
+            <div class="card__buttons"><a href="../initiative/12/" class="btn btn--outline btn--small">Подробнее</a></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__image-placeholder" style="background:linear-gradient(135deg,#e4dcd8,#c8b8a8);">🏠<span class="card__heart">❤️</span></div>
+          <div class="card__body">
+            <div class="card__subtitle">Детский дом №2 г.Барнаул</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:18.2%"></div></div>
+              <div class="progress__info"><span class="progress__collected">67 254 ₽</span><span>из 370 000 ₽</span></div>
+            </div>
+            <div class="card__title">Создаём уют и комфортные условия</div>
+            <div class="card__buttons"><a href="../initiative/7/" class="btn btn--outline btn--small">Подробнее</a></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__image-placeholder" style="background:linear-gradient(135deg,#d8e4d8,#b0c8a8);">🏡<span class="card__heart">❤️</span></div>
+          <div class="card__body">
+            <div class="card__subtitle">Детский дом №3 г.Барнаул</div>
+            <div class="progress">
+              <div class="progress__bar"><div class="progress__fill" style="width:98.4%"></div></div>
+              <div class="progress__info"><span class="progress__collected">433 162 ₽</span><span>из 440 000 ₽</span></div>
+            </div>
+            <div class="card__title">Зонирование детских комнат</div>
+            <div class="card__buttons"><a href="../initiative/8/" class="btn btn--outline btn--small">Подробнее</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Ambassador Levels -->
+  <div class="container">
+    <section class="section">
+      <h2 class="section__title section__title--red">Пожертвование</h2>
+      <div class="ambassador-tiers">
+        <div class="ambassador-tier">
+          <div class="ambassador-tier__icon" style="background:#cd7f32;">1</div>
+          <div class="ambassador-tier__content">
+            <div class="ambassador-tier__title">Уровень 1 — «Бронзовый Амбассадор»</div>
+            <div class="ambassador-tier__desc">Суммарные пожертвования: <strong>от 500 ₽</strong><br>Помощь в обеспечении игрушками для детей из малообеспеченных семей.</div>
+          </div>
+        </div>
+        <div class="ambassador-tier">
+          <div class="ambassador-tier__icon" style="background:#c0c0c0;color:#333;">2</div>
+          <div class="ambassador-tier__content">
+            <div class="ambassador-tier__title">Уровень 2 — «Серебряный Амбассадор»</div>
+            <div class="ambassador-tier__desc">Суммарные пожертвования: <strong>от 30 000 ₽</strong><br>Обеспечение базовыми товарами первой необходимости для семей в трудной ситуации.</div>
+          </div>
+        </div>
+        <div class="ambassador-tier">
+          <div class="ambassador-tier__icon" style="background:#e8b800;">3</div>
+          <div class="ambassador-tier__content">
+            <div class="ambassador-tier__title">Уровень 3 — «Золотой Амбассадор»</div>
+            <div class="ambassador-tier__desc">Суммарные пожертвования: <strong>от 60 000 ₽</strong><br>Финансирование медицинских услуг для детей с ограниченными возможностями здоровья.</div>
+          </div>
+        </div>
+        <div class="ambassador-tier">
+          <div class="ambassador-tier__icon" style="background:#333;">4</div>
+          <div class="ambassador-tier__content">
+            <div class="ambassador-tier__title">Уровень 4 — «Платиновый Амбассадор»</div>
+            <div class="ambassador-tier__desc">Суммарные пожертвования: <strong>от 120 000 ₽</strong><br>Поддержка программ реабилитации для подростков из неблагополучных семей.</div>
+          </div>
+        </div>
+        <div class="ambassador-tier">
+          <div class="ambassador-tier__icon" style="background:linear-gradient(135deg,#b9f2ff,#e0e0e0);color:#333;">5</div>
+          <div class="ambassador-tier__content">
+            <div class="ambassador-tier__title">Уровень 5 — «Бриллиантовый Амбассадор»</div>
+            <div class="ambassador-tier__desc">Суммарные пожертвования: <strong>от 160 000 ₽</strong><br>Финансирование долгосрочных образовательных программ для детей-сирот.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Motivational Quote -->
+  <div class="container">
+    <section class="quote-section">
+      <p class="quote-section__text">ваше маленькое усилие — это чей-то билет в лучшую жизнь</p>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__nav">
+        <a href="../initiatives/" class="footer__nav-link">Инициативы</a>
+        <a href="../news/" class="footer__nav-link">Новости</a>
+        <a href="../reports/" class="footer__nav-link">Отчеты</a>
+        <a href="../about/" class="footer__nav-link">О фонде</a>
+        <a href="../contacts/" class="footer__nav-link">Контакты</a>
+        <a href="../privacy-police/" class="footer__nav-link">Политика конфиденциальности</a>
+        <a href="../public-offer/" class="footer__nav-link">Публичная оферта</a>
+      </div>
+      <div class="footer__logo">
+        <div class="footer__logo-text">ewa.<br>надежда.<br>любовь.</div>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__social">
+          <a href="javascript:void(0)" class="footer__social-icon">TG</a>
+          <a href="javascript:void(0)" class="footer__social-icon">VK</a>
+        </div>
+        <a href="mailto:info@ewahelps.com" class="footer__contact-link">info@ewahelps.com</a>
+        <a href="tel:+79612167606" class="footer__contact-link">+7 (961) 216-76-06</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner__inner">
+      <div>
+        <div class="cookie-banner__title">Этот сайт использует cookie!</div>
+        <div class="cookie-banner__text">Продолжая просматривать сайт, вы соглашаетесь на использование cookie в соответствии с политикой.</div>
+      </div>
+      <button class="cookie-banner__btn" onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+    </div>
+  </div>
+
+  <script>
+    function selectAmount(el, amount) {
+      document.querySelectorAll('.donate-amount').forEach(a => a.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+</body>
+</html>
