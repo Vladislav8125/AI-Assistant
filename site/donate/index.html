@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Помочь — EWA. Надежда. Любовь.</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <a href="/" class="header__logo"><span>EWA.</span> Надежда. Любовь.</a>
+    <div class="hamburger" onclick="document.querySelector('.header__nav').classList.toggle('open')"><span></span><span></span><span></span></div>
+    <nav class="header__nav">
+      <a href="/about/">О фонде</a>
+      <a href="/initiatives/">Инициативы</a>
+      <a href="/reports/">Отчёты</a>
+      <a href="/news/">Новости</a>
+      <a href="/contacts/">Контакты</a>
+      <a href="/donate/" class="header__donate-btn">Помочь</a>
+    </nav>
+  </header>
+
+  <div style="margin-top: var(--header-height); padding: 2rem var(--container-padding);">
+    <a href="/" class="back-link">← перейти на главную</a>
+  </div>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="donate-container">
+      <h2 class="section__title" style="text-align: center;">Быстрое пожертвование</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+        Фонд сам выберет на какую инициативу направить ваше пожертвование. Разовое пожертвование.
+      </p>
+
+      <div class="donate-tabs">
+        <button class="donate-tab active" onclick="selectTab(this)">Быстрое пожертвование</button>
+        <button class="donate-tab" onclick="selectTab(this)">Подписка</button>
+      </div>
+
+      <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--accent);">Варианты пожертвования</h3>
+      <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">Выберите сумму</p>
+
+      <div class="donate-amounts">
+        <button class="donate-amount" onclick="selectAmount(this, 325)">325 ₽</button>
+        <button class="donate-amount" onclick="selectAmount(this, 750)">750 ₽</button>
+        <button class="donate-amount active" onclick="selectAmount(this, 1000)">1 000 ₽</button>
+        <button class="donate-amount" onclick="selectAmount(this, 3000)">3 000 ₽</button>
+      </div>
+
+      <p class="donate-summary">Вы выбрали разовое пожертвование в размере <strong id="selectedAmount">1 000</strong> ₽</p>
+
+      <a href="#" class="btn btn--blue" style="width: 100%; justify-content: center; margin-bottom: 1.5rem;">Перейти к оплате</a>
+
+      <p class="donate-legal">
+        Переходя по кнопке вы подтверждаете, что ознакомились и принимаете условия 
+        <a href="/privacy-police/">Политики конфиденциальности</a> Фонда и 
+        <a href="/public-offer/">Публичной оферты</a> пожертвования Фонда в полном объеме.
+      </p>
+
+      <p style="font-size: 0.8rem; color: var(--text-secondary);">Техническая поддержка</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div><div class="footer__logo">EWA. Надежда. Любовь.</div></div>
+      <div><h4 class="footer__heading">Навигация</h4><ul class="footer__links"><li><a href="/about/">О фонде</a></li><li><a href="/initiatives/">Инициативы</a></li><li><a href="/contacts/">Контакты</a></li></ul></div>
+      <div><h4 class="footer__heading">Контакты</h4><ul class="footer__links"><li><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2024 Фонд «Эва.Надежда.Любовь»</span></div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner"><p>Этот сайт использует cookie!</p><button onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button></div>
+
+  <script>
+    window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>10)});
+    function selectTab(el) {
+      document.querySelectorAll('.donate-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+    function selectAmount(el, amount) {
+      document.querySelectorAll('.donate-amount').forEach(a => a.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('selectedAmount').textContent = amount.toLocaleString('ru-RU');
+    }
+  </script>
+</body>
+</html>

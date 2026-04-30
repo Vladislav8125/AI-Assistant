@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новости — EWA. Надежда. Любовь.</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <a href="/" class="header__logo"><span>EWA.</span> Надежда. Любовь.</a>
+    <div class="hamburger" onclick="document.querySelector('.header__nav').classList.toggle('open')"><span></span><span></span><span></span></div>
+    <nav class="header__nav">
+      <a href="/about/">О фонде</a>
+      <a href="/initiatives/">Инициативы</a>
+      <a href="/reports/">Отчёты</a>
+      <a href="/news/" class="active">Новости</a>
+      <a href="/contacts/">Контакты</a>
+      <a href="/donate/" class="header__donate-btn">Помочь</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1 class="page-header__title">Новости</h1>
+  </div>
+
+  <section class="section">
+    <div class="news-list">
+      <div class="news-item">
+        <div class="news-item__date">11 ноя<br>2024</div>
+        <div class="news-item__content">
+          <h3 class="news-item__title">Официальная презентация фонда</h3>
+          <p class="news-item__text">12 октября на Дне рождении компании EWA PRODUCT, нашего генерального партнера, состоялась официальная презентация фонда.</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-item__date">1 окт<br>2024</div>
+        <div class="news-item__content">
+          <h3 class="news-item__title">Приглашаем в наше доброе сообщество</h3>
+          <p class="news-item__text">Приглашаем вас в наше доброе сообщество, где каждый может сделать хороший поступок в том городе, в котором вы живете.</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-item__date">1 окт<br>2024</div>
+        <div class="news-item__content">
+          <h3 class="news-item__title">Обращайтесь к нам за помощью</h3>
+          <p class="news-item__text">Вы можете обратиться к нам по телефону 8(863)301-33-30. И мы придумаем как и чем мы сможем помочь.</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-item__date">1 окт<br>2024</div>
+        <div class="news-item__content">
+          <h3 class="news-item__title">Начинаем сбор средств на благотворительные инициативы</h3>
+          <p class="news-item__text">Мы запускаем сбор средств для поддержки важнейших благотворительных проектов. Каждое ваше участие поможет тем, кто нуждается в помощи.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo">EWA. Надежда. Любовь.</div>
+        <p class="footer__desc">Благотворительный общественно полезный фонд «Эва.Надежда.Любовь».</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Навигация</h4>
+        <ul class="footer__links">
+          <li><a href="/about/">О фонде</a></li>
+          <li><a href="/initiatives/">Инициативы</a></li>
+          <li><a href="/reports/">Отчёты</a></li>
+          <li><a href="/news/">Новости</a></li>
+          <li><a href="/contacts/">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Контакты</h4>
+        <ul class="footer__links">
+          <li><a href="tel:+79612167606">+7 (961) 216-76-06</a></li>
+          <li><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></li>
+          <li>г. Новосибирск, ул. Фрунзе, д. 2Б</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2024 Фонд «Эва.Надежда.Любовь»</span>
+      <span><a href="/privacy-police/" style="color:rgba(255,255,255,.6)">Политика конфиденциальности</a> · <a href="/public-offer/" style="color:rgba(255,255,255,.6)">Публичная оферта</a></span>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Этот сайт использует cookie!</p>
+    <button onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+  </div>
+  <script>window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>10)})</script>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EWA. Надежда. Любовь.</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>💙</text></svg>">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <a href="/" class="header__logo"><span>EWA.</span> Надежда. Любовь.</a>
+    <div class="hamburger" onclick="document.querySelector('.header__nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="header__nav">
+      <a href="/about/">О фонде</a>
+      <a href="/initiatives/">Инициативы</a>
+      <a href="/reports/">Отчёты</a>
+      <a href="/news/">Новости</a>
+      <a href="/contacts/">Контакты</a>
+      <a href="/donate/" class="header__donate-btn">Помочь</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">EWA. Надежда. Любовь.</h1>
+      <p class="hero__subtitle">Благотворительный фонд, созданный для помощи нуждающимся. Мы верим, что если у человека есть возможность помочь — он должен это сделать.</p>
+      <div class="hero__buttons">
+        <a href="/donate/" class="btn btn--primary">💙 Сделать пожертвование</a>
+        <a href="/about/" class="btn btn--outline">Узнать о фонде</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat__number">7+</div>
+        <div class="stat__label">Благотворительных инициатив</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">800K+</div>
+        <div class="stat__label">Рублей собрано</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">100+</div>
+        <div class="stat__label">Людям помогли</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">6</div>
+        <div class="stat__label">Городов охвачено</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section section--alt">
+    <h2 class="section__title">Наши направления</h2>
+    <p class="section__subtitle">Мы помогаем в различных сферах, чтобы сделать мир лучше</p>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature__icon">
+          <span class="material-icons">child_care</span>
+        </div>
+        <h3 class="feature__title">Помощь детям</h3>
+        <p class="feature__text">Поддержка детей-сирот, детей оставшихся без попечения родителей, помощь в реабилитации и обучении.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <span class="material-icons">family_restroom</span>
+        </div>
+        <h3 class="feature__title">Поддержка семей</h3>
+        <p class="feature__text">Помощь многодетным и малообеспеченным семьям, женщинам в трудной жизненной ситуации.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <span class="material-icons">accessible</span>
+        </div>
+        <h3 class="feature__title">Помощь инвалидам</h3>
+        <p class="feature__text">Социальная поддержка людей с ограниченными возможностями здоровья.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <span class="material-icons">elderly</span>
+        </div>
+        <h3 class="feature__title">Забота о пожилых</h3>
+        <p class="feature__text">Помощь одиноким старикам и инвалидам, адресная поддержка нуждающихся.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <span class="material-icons">eco</span>
+        </div>
+        <h3 class="feature__title">Экология</h3>
+        <p class="feature__text">Инициативы в сфере экологии и охраны окружающей среды для чистого мира.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <span class="material-icons">pets</span>
+        </div>
+        <h3 class="feature__title">Помощь животным</h3>
+        <p class="feature__text">Поддержка приютов и программы помощи бездомным животным.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current Initiatives -->
+  <section class="section">
+    <h2 class="section__title">Текущие инициативы</h2>
+    <p class="section__subtitle">Актуальные сборы, которым нужна ваша поддержка</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card__image" style="background: linear-gradient(135deg, #e8f0fe, #d7e3ff); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🐾</div>
+        <div class="card__body">
+          <span class="card__tag">Помощь животным</span>
+          <h3 class="card__title">2 гектара надежды!</h3>
+          <div class="progress-bar">
+            <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 22.5%"></div></div>
+            <div class="progress-bar__info">
+              <span class="progress-bar__amount">90 314 ₽</span>
+              <span>из 400 000 ₽</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__image" style="background: linear-gradient(135deg, #fce4ec, #f8bbd0); display: flex; align-items: center; justify-content: center; font-size: 3rem;">👦</div>
+        <div class="card__body">
+          <span class="card__tag">Помощь детям</span>
+          <h3 class="card__title">Большие мечты маленького героя: помощь мальчику Вите</h3>
+          <p class="card__text">Оплата курса реабилитации</p>
+          <div class="progress-bar">
+            <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 13.8%"></div></div>
+            <div class="progress-bar__info">
+              <span class="progress-bar__amount">34 600 ₽</span>
+              <span>из 250 000 ₽</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__image" style="background: linear-gradient(135deg, #e8eaf6, #c5cae9); display: flex; align-items: center; justify-content: center; font-size: 3rem;">🏠</div>
+        <div class="card__body">
+          <span class="card__tag">Детский дом</span>
+          <h3 class="card__title">Создаём уют и комфортные условия</h3>
+          <p class="card__text">Детский дом №3 г.Барнаул — На перегородки в детские комнаты</p>
+          <div class="progress-bar">
+            <div class="progress-bar__track"><div class="progress-bar__fill" style="width: 98.4%"></div></div>
+            <div class="progress-bar__info">
+              <span class="progress-bar__amount">433 162 ₽</span>
+              <span>из 440 000 ₽</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="/initiatives/" class="btn btn--blue">Все инициативы →</a>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section class="section section--alt">
+    <h2 class="section__title">Новости</h2>
+    <p class="section__subtitle">Последние события и обновления фонда</p>
+    <div class="news-list">
+      <div class="news-item">
+        <div class="news-item__date">11 ноя<br>2024</div>
+        <div class="news-item__content">
+          <h3 class="news-item__title">Официальная презентация фонда</h3>
+          <p class="news-item__text">12 октября на Дне рождении компании EWA PRODUCT, нашего генерального партнера, состоялась официальная презентация фонда.</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-item__date">1 окт<br>2024</div>
+        <div class="news-item__content">
+          <h3 class="news-item__title">Приглашаем в наше доброе сообщество</h3>
+          <p class="news-item__text">Приглашаем вас в наше доброе сообщество, где каждый может сделать хороший поступок в том городе, в котором вы живете.</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-item__date">1 окт<br>2024</div>
+        <div class="news-item__content">
+          <h3 class="news-item__title">Начинаем сбор средств на благотворительные инициативы</h3>
+          <p class="news-item__text">Мы запускаем сбор средств для поддержки важнейших благотворительных проектов. Каждое ваше участие поможет тем, кто нуждается в помощи.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="/news/" class="btn btn--blue">Все новости →</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="hero" style="min-height: auto; padding: 4rem var(--container-padding);">
+    <div class="hero__content" style="text-align: center; max-width: 600px; margin: 0 auto;">
+      <h2 class="hero__title" style="font-size: clamp(1.5rem, 4vw, 2.5rem);">Помогите нам помогать</h2>
+      <p class="hero__subtitle" style="margin-left: auto; margin-right: auto;">Каждый рубль приближает нас к цели. Вместе мы можем изменить жизни тех, кто в этом нуждается.</p>
+      <a href="/donate/" class="btn btn--primary">💙 Сделать пожертвование</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo">EWA. Надежда. Любовь.</div>
+        <p class="footer__desc">Благотворительный общественно полезный фонд «Эва.Надежда.Любовь» — некоммерческая организация, созданная на добровольной основе.</p>
+      </div>
+      <div>
+        <h4 class="footer__heading">Навигация</h4>
+        <ul class="footer__links">
+          <li><a href="/about/">О фонде</a></li>
+          <li><a href="/initiatives/">Инициативы</a></li>
+          <li><a href="/reports/">Отчёты</a></li>
+          <li><a href="/news/">Новости</a></li>
+          <li><a href="/contacts/">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer__heading">Контакты</h4>
+        <ul class="footer__links">
+          <li><a href="tel:+79612167606">+7 (961) 216-76-06</a></li>
+          <li><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></li>
+          <li>г. Новосибирск, ул. Фрунзе, д. 2Б</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2024 Фонд «Эва.Надежда.Любовь». Все права защищены.</span>
+      <span>
+        <a href="/privacy-police/" style="color: rgba(255,255,255,0.6);">Политика конфиденциальности</a> · 
+        <a href="/public-offer/" style="color: rgba(255,255,255,0.6);">Публичная оферта</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Этот сайт использует cookie! Продолжая просматривать сайт, вы соглашаетесь на использование cookie в соответствии с политикой.</p>
+    <button onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>

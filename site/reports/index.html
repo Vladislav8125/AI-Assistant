@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отчёты — EWA. Надежда. Любовь.</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <a href="/" class="header__logo"><span>EWA.</span> Надежда. Любовь.</a>
+    <div class="hamburger" onclick="document.querySelector('.header__nav').classList.toggle('open')"><span></span><span></span><span></span></div>
+    <nav class="header__nav">
+      <a href="/about/">О фонде</a>
+      <a href="/initiatives/">Инициативы</a>
+      <a href="/reports/" class="active">Отчёты</a>
+      <a href="/news/">Новости</a>
+      <a href="/contacts/">Контакты</a>
+      <a href="/donate/" class="header__donate-btn">Помочь</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1 class="page-header__title">Отчёты</h1>
+  </div>
+
+  <section class="section">
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card__image" style="background:linear-gradient(135deg,#e8f0fe,#d7e3ff);display:flex;align-items:center;justify-content:center;font-size:3rem;">🤝</div>
+        <div class="card__body">
+          <h3 class="card__title">Ваша помощь — их тепло и комфорт. Поддержка нуждающихся в Батайске</h3>
+          <p class="card__text">Общество слепых, г.Батайск</p>
+          <p class="card__location"><span class="material-icons" style="font-size:16px">place</span> Социальный приют для детей. г.Батайск, пер.Чкалова д.37</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__image" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);display:flex;align-items:center;justify-content:center;font-size:3rem;">🏨</div>
+        <div class="card__body">
+          <h3 class="card__title">Обустройство единственной в России благотворительной гостиницы для онкобольных детей</h3>
+          <p class="card__text">Добрый Дом</p>
+          <p class="card__location"><span class="material-icons" style="font-size:16px">place</span> г.Москва, ул.Нагорная, д.22, к.1</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__image" style="background:linear-gradient(135deg,#e8eaf6,#c5cae9);display:flex;align-items:center;justify-content:center;font-size:3rem;">👴</div>
+        <div class="card__body">
+          <h3 class="card__title">Помощь одиноким старикам, инвалидам</h3>
+          <p class="card__text">Адресная помощь</p>
+          <p class="card__location"><span class="material-icons" style="font-size:16px">place</span> г.Батайск, г.Ростов-на-Дону</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__image" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);display:flex;align-items:center;justify-content:center;font-size:3rem;">👨‍👩‍👧‍👦</div>
+        <div class="card__body">
+          <h3 class="card__title">Помощь многодетным малообеспеченным семьям</h3>
+          <p class="card__text">Адресная помощь</p>
+          <p class="card__location"><span class="material-icons" style="font-size:16px">place</span> г.Ростов-на-Дону</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <div><div class="footer__logo">EWA. Надежда. Любовь.</div><p class="footer__desc">Благотворительный фонд</p></div>
+      <div><h4 class="footer__heading">Навигация</h4><ul class="footer__links"><li><a href="/about/">О фонде</a></li><li><a href="/initiatives/">Инициативы</a></li><li><a href="/reports/">Отчёты</a></li><li><a href="/news/">Новости</a></li><li><a href="/contacts/">Контакты</a></li></ul></div>
+      <div><h4 class="footer__heading">Контакты</h4><ul class="footer__links"><li><a href="tel:+79612167606">+7 (961) 216-76-06</a></li><li><a href="mailto:info@ewahelps.com">info@ewahelps.com</a></li><li>г. Новосибирск, ул. Фрунзе, д. 2Б</li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2024 Фонд «Эва.Надежда.Любовь»</span><span><a href="/privacy-police/" style="color:rgba(255,255,255,.6)">Политика конфиденциальности</a> · <a href="/public-offer/" style="color:rgba(255,255,255,.6)">Публичная оферта</a></span></div>
+  </footer>
+  <div class="cookie-banner" id="cookieBanner"><p>Этот сайт использует cookie!</p><button onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button></div>
+  <script>window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>10)})</script>
+</body>
+</html>
