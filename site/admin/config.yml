@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: Vladislav8125/AI-Assistant
+  branch: main
+  base_url: https://vladislav8125.github.io
+  site_domain: vladislav8125.github.io
+
+locale: ru
+
+media_folder: site/images/uploads
+public_folder: /AI-Assistant/images/uploads
+
+collections:
+  - name: news
+    label: Новости
+    files:
+      - label: Все новости
+        name: news
+        file: site/data/news.json
+        fields:
+          - label: Новости
+            name: items
+            widget: list
+            summary: "{{title}} — {{date}}"
+            fields:
+              - { label: ID, name: id, widget: string, hint: "Латиница, без пробелов" }
+              - { label: URL (slug), name: slug, widget: string }
+              - { label: Заголовок, name: title, widget: string }
+              - { label: Дата публикации, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+              - { label: Краткое описание, name: excerpt, widget: text }
+              - { label: Текст новости, name: body, widget: markdown }
+
+  - name: settings
+    label: Настройки сайта
+    files:
+      - label: Главная страница
+        name: homepage
+        file: site/data/site-settings.json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Заголовок, name: title, widget: string }
+              - { label: Подзаголовок, name: lead, widget: string }
+              - { label: Описание, name: subtitle, widget: text }
+          - { label: Цитата, name: quote, widget: text }

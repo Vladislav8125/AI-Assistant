@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ-панель — Андреевский</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+  <link rel="stylesheet" href="/AI-Assistant/admin/admin.css">
+</head>
+<body>
+  <div id="login-screen" class="admin-login">
+    <div class="admin-login__card">
+      <h1>Админ-панель</h1>
+      <p>Введите пароль для редактирования сайта</p>
+      <input type="password" id="login-password" class="admin-input" placeholder="Пароль" autocomplete="current-password">
+      <button type="button" id="login-btn" class="admin-btn admin-btn--primary">Войти</button>
+      <p id="login-error" class="admin-error" hidden></p>
+    </div>
+  </div>
+
+  <div id="app" class="admin-app" hidden>
+    <header class="admin-header">
+      <h1>Управление сайтом</h1>
+      <div class="admin-header__actions">
+        <button type="button" id="save-github-btn" class="admin-btn admin-btn--primary">Опубликовать на сайте</button>
+        <button type="button" id="logout-btn" class="admin-btn admin-btn--ghost">Выйти</button>
+      </div>
+    </header>
+
+    <nav class="admin-tabs">
+      <button type="button" class="admin-tabs__btn active" data-tab="news">Новости</button>
+      <button type="button" class="admin-tabs__btn" data-tab="settings">Главная страница</button>
+      <button type="button" class="admin-tabs__btn" data-tab="help">Справка</button>
+    </nav>
+
+    <main class="admin-main">
+      <section id="tab-news" class="admin-tab active">
+        <div class="admin-toolbar">
+          <button type="button" id="add-news-btn" class="admin-btn admin-btn--primary">+ Добавить новость</button>
+        </div>
+        <div id="news-editor" class="admin-editor" hidden>
+          <h2 id="editor-heading">Новая новость</h2>
+          <label class="admin-label">Заголовок
+            <input type="text" id="news-title" class="admin-input">
+          </label>
+          <label class="admin-label">Дата публикации
+            <input type="date" id="news-date" class="admin-input">
+          </label>
+          <label class="admin-label">Краткое описание (для списка)
+            <textarea id="news-excerpt" class="admin-input" rows="2"></textarea>
+          </label>
+          <label class="admin-label">Текст новости
+            <span class="admin-hint">Используйте заголовки ## и ### в панели форматирования</span>
+          </label>
+          <textarea id="news-body"></textarea>
+          <div class="admin-editor__actions">
+            <button type="button" id="save-news-btn" class="admin-btn admin-btn--primary">Сохранить новость</button>
+            <button type="button" id="cancel-news-btn" class="admin-btn admin-btn--ghost">Отмена</button>
+            <button type="button" id="delete-news-btn" class="admin-btn admin-btn--danger" hidden>Удалить</button>
+          </div>
+        </div>
+        <ul id="news-list-admin" class="admin-news-list"></ul>
+      </section>
+
+      <section id="tab-settings" class="admin-tab" hidden>
+        <h2>Тексты на главной</h2>
+        <label class="admin-label">Заголовок (крупный)
+          <input type="text" id="hero-title" class="admin-input">
+        </label>
+        <label class="admin-label">Подзаголовок
+          <input type="text" id="hero-lead" class="admin-input">
+        </label>
+        <label class="admin-label">Описание фонда
+          <textarea id="hero-subtitle" class="admin-input" rows="3"></textarea>
+        </label>
+        <label class="admin-label">Цитата внизу страницы
+          <textarea id="site-quote" class="admin-input" rows="3"></textarea>
+        </label>
+        <button type="button" id="save-settings-btn" class="admin-btn admin-btn--primary">Сохранить настройки</button>
+      </section>
+
+      <section id="tab-help" class="admin-tab" hidden>
+        <div class="admin-help prose">
+          <h2>Как пользоваться</h2>
+          <ol>
+            <li>Добавляйте и редактируйте новости во вкладке «Новости».</li>
+            <li>Нажмите <strong>«Опубликовать на сайте»</strong> — изменения появятся на сайте через 1–2 минуты.</li>
+          </ol>
+          <h3>Первый запуск: токен GitHub</h3>
+          <p>Для публикации нужен <a href="https://github.com/settings/tokens" target="_blank" rel="noopener">Personal Access Token</a> с правом <code>repo</code>. Введите его один раз — он сохранится в браузере.</p>
+          <label class="admin-label">GitHub Token
+            <input type="password" id="github-token" class="admin-input" placeholder="ghp_...">
+          </label>
+          <button type="button" id="save-token-btn" class="admin-btn admin-btn--ghost">Сохранить токен</button>
+          <h3>Пароль админки</h3>
+          <p>Задаётся в файле <code>site/data/admin-config.json</code> в репозитории. По умолчанию: <code>andreevsky-admin</code> — смените после первого входа.</p>
+          <h3>Альтернатива</h3>
+          <p>Можно также использовать <a href="/AI-Assistant/admin/">Decap CMS</a> (требует настройки GitHub OAuth).</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="admin-toast" hidden></div>
+  </div>
+
+  <script src="/AI-Assistant/js/config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+  <script src="/AI-Assistant/admin/admin-panel.js"></script>
+</body>
+</html>

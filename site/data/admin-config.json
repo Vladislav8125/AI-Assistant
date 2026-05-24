@@ -1,0 +1,10 @@
+{
+  "password": "andreevsky-admin",
+  "github": {
+    "owner": "Vladislav8125",
+    "repo": "AI-Assistant",
+    "branch": "main",
+    "newsPath": "site/data/news.json",
+    "settingsPath": "site/data/site-settings.json"
+  }
+}
