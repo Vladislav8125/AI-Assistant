@@ -4,26 +4,23 @@
   <meta charset="UTF-8">
   <base href="/AI-Assistant/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Инициативы — EWA. Надежда. Любовь.</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Проекты — Андреевский</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <!-- Header -->
   <div class="container">
     <header class="header">
       <a href="/" class="header__logo">
         <img src="../images/logo-andreevskiy.png" alt="Андреевский — С верой в душе на благо родины" class="header__logo-img" width="272" height="67">
       </a>
       <nav class="header__nav" id="nav">
-        <a href="/initiatives/" class="header__nav-link active">Инициативы</a>
+        <a href="/initiatives/" class="header__nav-link active">Программы</a>
         <a href="/news/" class="header__nav-link">Новости</a>
-        <a href="/reports/" class="header__nav-link">Отчеты</a>
-        <a href="/about/" class="header__nav-link">О фонде</a>
+        <a href="/about/" class="header__nav-link">О нас</a>
         <a href="/contacts/" class="header__nav-link">Контакты</a>
       </nav>
       <div class="header__right">
-        <a href="#" class="header__login">Войти</a>
-        <a href="/donate/" class="header__ewa-btn">EWA +</a>
+        <a href="/donate/" class="header__ewa-btn">Пожертвовать</a>
       </div>
       <div class="mobile-menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">
         <span></span><span></span><span></span>
@@ -31,152 +28,58 @@
     </header>
   </div>
 
-  <!-- Page Banner -->
   <div class="container">
     <div class="page-banner page-banner--red">
-      <h1 class="page-banner__title">Инициативы</h1>
+      <h1 class="page-banner__title">Проекты</h1>
     </div>
   </div>
 
-  <!-- Initiative Cards -->
   <div class="container">
     <section class="section">
       <div class="cards-grid">
-        <!-- Card 1 -->
         <div class="card">
-          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #f0e6d8, #d4c4b0);">
-            🐾
-            <span class="card__heart">❤️</span>
-          </div>
+          <div class="card__image"><img src="../images/projects/church.jpg" alt="Возрождение Храма Святой Троицы"></div>
           <div class="card__body">
-            <div class="card__title">2 гектара надежды!</div>
-            <div class="card__subtitle">Помощь животным</div>
-            <div class="progress">
-              <div class="progress__bar"><div class="progress__fill" style="width:22.5%"></div></div>
-              <div class="progress__info"><span class="progress__collected">90 314 ₽</span><span>из 400 000 ₽</span></div>
-            </div>
+            <div class="card__title">Возрождение Храма Святой Троицы</div>
+            <p class="card__text">Восстанавливаем храм Пресвятой Троицы в деревне Андрианово — памятник неоготики XIX века. Возвращаем святыне богослужения, открываем путь паломникам и бережно сохраняем историческое наследие для будущих поколений.</p>
             <div class="card__buttons">
-              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="/about/" class="btn btn--outline btn--small">Подробнее</a>
               <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
             </div>
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="card">
-          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #e8ddd4, #d4c0ab);">
-            👦
-            <span class="card__heart">❤️</span>
-          </div>
+          <div class="card__image"><img src="../images/projects/veterans.jpg" alt="Помощь ветеранам"></div>
           <div class="card__body">
-            <div class="card__title">Большие мечты маленького героя: помощь мальчику Вите.</div>
-            <div class="card__subtitle">Помощь детям · Оплата курса реабилитации</div>
-            <div class="progress">
-              <div class="progress__bar"><div class="progress__fill" style="width:13.8%"></div></div>
-              <div class="progress__info"><span class="progress__collected">34 600 ₽</span><span>из 250 000 ₽</span></div>
-            </div>
+            <div class="card__title">Помощь ветеранам</div>
+            <p class="card__text">Сопровождаем участников СВО и их семей: медицинская и психологическая помощь, пансионы, трудоустройство и ИИ-сервис «Собеседник». Развиваем социокультурную адаптацию через спорт, творчество и живое общение.</p>
             <div class="card__buttons">
-              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="/about/" class="btn btn--outline btn--small">Подробнее</a>
               <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
             </div>
           </div>
         </div>
 
-        <!-- Card 3 -->
         <div class="card">
-          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #dce4d8, #b8c8a8);">
-            👧
-            <span class="card__heart">❤️</span>
-          </div>
+          <div class="card__image"><img src="../images/projects/prayer.jpg" alt="Молитва по соглашению"></div>
           <div class="card__body">
-            <div class="card__title">Поможем Еве на пути к полноценной жизни!</div>
-            <div class="card__subtitle">Помощь детям · Оплата курса реабилитации и коррекционного центра</div>
-            <div class="progress">
-              <div class="progress__bar"><div class="progress__fill" style="width:41.6%"></div></div>
-              <div class="progress__info"><span class="progress__collected">104 071 ₽</span><span>из 250 000 ₽</span></div>
-            </div>
+            <div class="card__title">Молитва по соглашению</div>
+            <p class="card__text">Цифровая платформа для согласованной молитвы: интеллектуальный подбор текстов, чат-бот и тематические группы, где можно молиться вместе и поддерживать друг друга.</p>
             <div class="card__buttons">
-              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="https://t.me/bf_andreevsky" class="btn btn--outline btn--small" target="_blank" rel="noopener noreferrer">Подробнее</a>
               <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
             </div>
           </div>
         </div>
 
-        <!-- Card 4 -->
         <div class="card">
-          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #e0d8d4, #c8b8b0);">
-            🦁
-            <span class="card__heart">❤️</span>
-          </div>
+          <div class="card__image"><img src="../images/projects/pilgrimage.jpg" alt="Паломнические поездки «Дороги Веры»"></div>
           <div class="card__body">
-            <div class="card__title">Обновление интерьерного пространства Центра "Лев"</div>
-            <div class="card__subtitle">Интеграционный центр "Лев" · На обновление мебели и косметический ремонт центра</div>
-            <div class="progress">
-              <div class="progress__bar"><div class="progress__fill" style="width:22.3%"></div></div>
-              <div class="progress__info"><span class="progress__collected">55 795 ₽</span><span>из 250 000 ₽</span></div>
-            </div>
+            <div class="card__title">Паломнические поездки «Дороги Веры»</div>
+            <p class="card__text">Проводим лекции, организуем паломнические маршруты и волонтёрские акции для молодёжи и всех, кто разделяет традиционные духовные ценности.</p>
             <div class="card__buttons">
-              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
-              <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="card">
-          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #d8e0e4, #b0c0c8);">
-            🧒
-            <span class="card__heart">❤️</span>
-          </div>
-          <div class="card__body">
-            <div class="card__title">Мир без тревог: поможем детям Новошахтинска обрести эмоциональную опору</div>
-            <div class="card__subtitle">Детский дом г.Новошахтинск · На интерактивную систему Pogumax Designer</div>
-            <div class="progress">
-              <div class="progress__bar"><div class="progress__fill" style="width:13%"></div></div>
-              <div class="progress__info"><span class="progress__collected">57 339 ₽</span><span>из 440 000 ₽</span></div>
-            </div>
-            <div class="card__buttons">
-              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
-              <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="card">
-          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #e4dcd8, #c8b8a8);">
-            🏠
-            <span class="card__heart">❤️</span>
-          </div>
-          <div class="card__body">
-            <div class="card__title">Создаём уют и комфортные условия</div>
-            <div class="card__subtitle">Детский дом №2 г.Барнаул · На обновление жилищных условий</div>
-            <div class="progress">
-              <div class="progress__bar"><div class="progress__fill" style="width:18.2%"></div></div>
-              <div class="progress__info"><span class="progress__collected">67 254 ₽</span><span>из 370 000 ₽</span></div>
-            </div>
-            <div class="card__buttons">
-              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
-              <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="card">
-          <div class="card__image-placeholder" style="background: linear-gradient(135deg, #d8e4d8, #b0c8a8);">
-            🏡
-            <span class="card__heart">❤️</span>
-          </div>
-          <div class="card__body">
-            <div class="card__title">Создаём уют и комфортные условия</div>
-            <div class="card__subtitle">Детский дом №3 г.Барнаул · На перегородки в детские комнаты</div>
-            <div class="progress">
-              <div class="progress__bar"><div class="progress__fill" style="width:98.4%"></div></div>
-              <div class="progress__info"><span class="progress__collected">433 162 ₽</span><span>из 440 000 ₽</span></div>
-            </div>
-            <div class="card__buttons">
-              <a href="#" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="/about/" class="btn btn--outline btn--small">Подробнее</a>
               <a href="/donate/" class="btn btn--solid btn--small">Помочь</a>
             </div>
           </div>
@@ -185,14 +88,12 @@
     </section>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__nav">
-        <a href="/initiatives/" class="footer__nav-link">Инициативы</a>
+        <a href="/initiatives/" class="footer__nav-link">Программы</a>
         <a href="/news/" class="footer__nav-link">Новости</a>
-        <a href="/reports/" class="footer__nav-link">Отчеты</a>
-        <a href="/about/" class="footer__nav-link">О фонде</a>
+        <a href="/about/" class="footer__nav-link">О нас</a>
         <a href="/contacts/" class="footer__nav-link">Контакты</a>
         <a href="/privacy-police/" class="footer__nav-link">Политика конфиденциальности</a>
         <a href="/public-offer/" class="footer__nav-link">Публичная оферта</a>
@@ -202,24 +103,24 @@
       </div>
       <div class="footer__contacts">
         <div class="footer__social">
-          <a href="#" class="footer__social-icon">TG</a>
-          <a href="#" class="footer__social-icon">VK</a>
+          <a href="https://t.me/bf_andreevsky" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="Telegram">TG</a>
+          <a href="https://vk.ru/club238394053" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">VK</a>
         </div>
-        <a href="mailto:info@ewahelps.com" class="footer__contact-link">info@ewahelps.com</a>
-        <a href="tel:+79612167606" class="footer__contact-link">+7 (961) 216-76-06</a>
+        <a href="mailto:info@andreevsky.ru" class="footer__contact-link">info@andreevsky.ru</a>
+        <a href="tel:+79110501124" class="footer__contact-link">+7 (911) 050-11-24</a>
       </div>
     </div>
   </footer>
 
-  <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-banner__inner">
       <div>
         <div class="cookie-banner__title">Этот сайт использует cookie!</div>
         <div class="cookie-banner__text">Продолжая просматривать сайт, вы соглашаетесь на использование cookie в соответствии с политикой.</div>
       </div>
-      <button class="cookie-banner__btn" onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+      <button type="button" class="cookie-banner__btn">Принять и закрыть</button>
     </div>
   </div>
+  <script src="../js/site.js"></script>
 </body>
 </html>

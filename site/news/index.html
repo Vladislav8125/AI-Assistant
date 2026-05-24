@@ -4,26 +4,23 @@
   <meta charset="UTF-8">
   <base href="/AI-Assistant/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Новости — EWA. Надежда. Любовь.</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Новости — Андреевский</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <!-- Header -->
   <div class="container">
     <header class="header">
       <a href="/" class="header__logo">
         <img src="../images/logo-andreevskiy.png" alt="Андреевский — С верой в душе на благо родины" class="header__logo-img" width="272" height="67">
       </a>
       <nav class="header__nav" id="nav">
-        <a href="/initiatives/" class="header__nav-link">Инициативы</a>
+        <a href="/initiatives/" class="header__nav-link">Программы</a>
         <a href="/news/" class="header__nav-link active">Новости</a>
-        <a href="/reports/" class="header__nav-link">Отчеты</a>
-        <a href="/about/" class="header__nav-link">О фонде</a>
+        <a href="/about/" class="header__nav-link">О нас</a>
         <a href="/contacts/" class="header__nav-link">Контакты</a>
       </nav>
       <div class="header__right">
-        <a href="#" class="header__login">Войти</a>
-        <a href="/donate/" class="header__ewa-btn">EWA +</a>
+        <a href="/donate/" class="header__ewa-btn">Пожертвовать</a>
       </div>
       <div class="mobile-menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">
         <span></span><span></span><span></span>
@@ -31,73 +28,68 @@
     </header>
   </div>
 
-  <!-- Page Banner -->
   <div class="container">
     <div class="page-banner page-banner--red">
       <h1 class="page-banner__title">Новости</h1>
     </div>
   </div>
 
-  <!-- News Cards -->
   <div class="container">
     <section class="section">
-      <div class="news-grid">
-        <!-- News 1 -->
-        <div class="news-card">
-          <div class="news-card__image-placeholder" style="background: linear-gradient(135deg, #e8d8d4, #d4b8b0);">
-            📰
-          </div>
-          <div class="news-card__body">
-            <div class="news-card__date">11 ноября 2024</div>
-            <div class="news-card__title">12 октября на Дне рождении компании EWA PRODUCT, нашего генерального партнера, состоялась официальная презентация фонда.</div>
-          </div>
+      <article class="news-article">
+        <h2 class="news-article__title">Сегодня мы задали пару вопросов директору фонда</h2>
+
+        <div class="news-article__qa">
+          <p class="news-article__question">Вопрос: В чём вы видите главную задачу вашего фонда?</p>
+          <p class="news-article__answer">Ответ: Одна из самых острых проблем, которая меня, как директора, глубоко трогает, — это психологическая реабилитация воинов, прошедших через ад боевых действий. Они сражались за безопасность нашей Родины, и слава Богу, если вернулись живыми. Но даже если физически целы — психика часто травмирована. А если добавить ранения, потерю близких, одиночество после возвращения... Многие бойцы сталкиваются с равнодушием, даже в госпиталях, куда неделями не приходят родные.</p>
         </div>
 
-        <!-- News 2 -->
-        <div class="news-card">
-          <div class="news-card__image-placeholder" style="background: linear-gradient(135deg, #d8e0d4, #b8c8a8);">
-            🤝
-          </div>
-          <div class="news-card__body">
-            <div class="news-card__date">1 октября 2024</div>
-            <div class="news-card__title">Приглашаем вас в наше доброе сообщество, где каждый может сделать хороший поступок в том городе, в котором вы живете</div>
-          </div>
+        <div class="news-article__qa">
+          <p class="news-article__question">Вопрос: Почему для вас это так важно?</p>
+          <p class="news-article__answer">Ответ: Я сам к 33 годам потерял обоих родителей и знаю, как тяжело, когда в трудную минуту некому даже сказать доброе слово. А представьте, что переживают эти ребята? Они видели смерть, теряли друзей, а потом остаются один на один со своими ранами — и физическими, и душевными. Мы не можем оставить их без поддержки.</p>
         </div>
 
-        <!-- News 3 -->
-        <div class="news-card">
-          <div class="news-card__image-placeholder" style="background: linear-gradient(135deg, #d4d8e8, #b0b8c8);">
-            📞
-          </div>
-          <div class="news-card__body">
-            <div class="news-card__date">1 октября 2024</div>
-            <div class="news-card__title">Вы можете обратиться к нам по телефону 8(863)301-33-30. И мы придумаем как и чем мы сможем помочь</div>
-          </div>
+        <div class="news-article__qa">
+          <p class="news-article__question">Вопрос: Какие конкретные шаги планирует фонд?</p>
+          <p class="news-article__answer">Ответ: В ближайшее время мы навестим раненых бойцов в госпиталях — привезём фрукты, сладости, но главное — пообщаемся, узнаем об их состоянии, планах на будущее. Это поможет нам скорректировать программу помощи: от психологической реабилитации до социальной адаптации.</p>
         </div>
 
-        <!-- News 4 -->
-        <div class="news-card">
-          <div class="news-card__image-placeholder" style="background: linear-gradient(135deg, #e4dcd8, #c8b8a8);">
-            💰
-          </div>
-          <div class="news-card__body">
-            <div class="news-card__date">1 октября 2024</div>
-            <div class="news-card__title">Начинаем сбор средств на благотворительные инициативы</div>
-            <div class="news-card__text">Мы запускаем сбор средств для поддержки важнейших благотворительных проектов. Каждое ваше участие поможет тем, кто нуждается в помощи.</div>
-          </div>
+        <div class="news-article__qa">
+          <p class="news-article__question">Вопрос: Как люди могут помочь?</p>
+          <p class="news-article__answer">Ответ: Любая поддержка важна. Иногда отказ от чашки кофе в кафе — это незначительная для нас сумма, но для бойца она может стать глотком тепла в трудный момент. Мы только начинаем и будем благодарны каждому, кто присоединится к этому важному делу.</p>
         </div>
-      </div>
+
+        <p><strong>💪 Если вам небезразлична судьба тех, кто защищал нашу страну, — поддержите нашу инициативу!</strong> Вместе мы сможем дать им не только помощь, но и надежду.</p>
+      </article>
+
+      <article class="news-article">
+        <h2 class="news-article__title">Оценка состояния храма</h2>
+        <p>Сотрудники Благотворительного фонда «Андреевский» также посетили деревню Андрианово, чтобы оценить состояние храма Пресвятой Троицы и масштаб будущих восстановительных работ.</p>
+        <p>Построенная в 1831 году, величественная церковь в неоготическом стиле сегодня находится в запустении. Храм пережил войну и годы забвения, но сейчас остаётся без богослужений, а местным жителям приходится ездить в Тосно, чтобы попасть на службу или помолиться.</p>
+        <p>Для села действующий храм — жизненная необходимость. Поэтому мы продолжаем сбор средств на восстановление святыни. Каждое пожертвование помогает приблизить день, когда в Андрианово вновь зазвучит молитва.</p>
+      </article>
+
+      <article class="news-article">
+        <h2 class="news-article__title">Субботник в храме Казанской иконы Божией Матери села Ушаки</h2>
+        <p>На территории храма Казанской иконы Божией Матери в селе Ушаки состоялся субботник, участниками которого стала команда Благотворительного фонда помощи нуждающимся «Андреевский».</p>
+        <p>Храм Казанской иконы Божией Матери — особое место для ушакинцев. Его история началась в 1903 году, но в советское время здание использовалось как клуб, а в 1984-м сильно пострадало от пожара. Восстановление святыни началось в начале 2000-х годов, и с тех пор неравнодушные жители продолжают общими усилиями заботиться о ней.</p>
+        <p>Теперь к этому доброму делу присоединился и БФ «Андреевский». В рамках субботника сотрудники фонда вместе с волонтёрами не только привели в порядок прихрамовую территорию, но и внесли свой вклад в создание уюта и красоты вокруг намоленного места.</p>
+        <p>Спасибо всем, кто был с нами, а Отцу Фёдору — за приглашение 🥰</p>
+      </article>
+
+      <article class="news-article">
+        <h2 class="news-article__title">Церемония возложения цветов 9 мая</h2>
+        <p>Директор Благотворительного фонда «Андреевский» Дмитрий Эснер принял участие в церемонии возложения цветов. Мы склоняем головы перед светлой памятью погибших. Помнить — значит жить. Вечная слава героям.</p>
+      </article>
     </section>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__nav">
-        <a href="/initiatives/" class="footer__nav-link">Инициативы</a>
+        <a href="/initiatives/" class="footer__nav-link">Программы</a>
         <a href="/news/" class="footer__nav-link">Новости</a>
-        <a href="/reports/" class="footer__nav-link">Отчеты</a>
-        <a href="/about/" class="footer__nav-link">О фонде</a>
+        <a href="/about/" class="footer__nav-link">О нас</a>
         <a href="/contacts/" class="footer__nav-link">Контакты</a>
         <a href="/privacy-police/" class="footer__nav-link">Политика конфиденциальности</a>
         <a href="/public-offer/" class="footer__nav-link">Публичная оферта</a>
@@ -107,24 +99,24 @@
       </div>
       <div class="footer__contacts">
         <div class="footer__social">
-          <a href="#" class="footer__social-icon">TG</a>
-          <a href="#" class="footer__social-icon">VK</a>
+          <a href="https://t.me/bf_andreevsky" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="Telegram">TG</a>
+          <a href="https://vk.ru/club238394053" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">VK</a>
         </div>
-        <a href="mailto:info@ewahelps.com" class="footer__contact-link">info@ewahelps.com</a>
-        <a href="tel:+79612167606" class="footer__contact-link">+7 (961) 216-76-06</a>
+        <a href="mailto:info@andreevsky.ru" class="footer__contact-link">info@andreevsky.ru</a>
+        <a href="tel:+79110501124" class="footer__contact-link">+7 (911) 050-11-24</a>
       </div>
     </div>
   </footer>
 
-  <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-banner__inner">
       <div>
         <div class="cookie-banner__title">Этот сайт использует cookie!</div>
         <div class="cookie-banner__text">Продолжая просматривать сайт, вы соглашаетесь на использование cookie в соответствии с политикой.</div>
       </div>
-      <button class="cookie-banner__btn" onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+      <button type="button" class="cookie-banner__btn">Принять и закрыть</button>
     </div>
   </div>
+  <script src="../js/site.js"></script>
 </body>
 </html>

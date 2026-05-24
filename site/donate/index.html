@@ -4,26 +4,23 @@
   <meta charset="UTF-8">
   <base href="/AI-Assistant/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Пожертвование — EWA. Надежда. Любовь.</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Пожертвование — Андреевский</title>
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <!-- Header -->
   <div class="container">
     <header class="header">
       <a href="/" class="header__logo">
         <img src="../images/logo-andreevskiy.png" alt="Андреевский — С верой в душе на благо родины" class="header__logo-img" width="272" height="67">
       </a>
       <nav class="header__nav" id="nav">
-        <a href="/initiatives/" class="header__nav-link">Инициативы</a>
+        <a href="/initiatives/" class="header__nav-link">Программы</a>
         <a href="/news/" class="header__nav-link">Новости</a>
-        <a href="/reports/" class="header__nav-link">Отчеты</a>
-        <a href="/about/" class="header__nav-link">О фонде</a>
+        <a href="/about/" class="header__nav-link">О нас</a>
         <a href="/contacts/" class="header__nav-link">Контакты</a>
       </nav>
       <div class="header__right">
-        <a href="#" class="header__login">Войти</a>
-        <a href="/donate/" class="header__ewa-btn">EWA +</a>
+        <a href="/donate/" class="header__ewa-btn">Пожертвовать</a>
       </div>
       <div class="mobile-menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')">
         <span></span><span></span><span></span>
@@ -31,22 +28,19 @@
     </header>
   </div>
 
-  <!-- Donate Page -->
   <div class="container">
     <a href="/" class="donate-page__back">← перейти на главную</a>
     <div class="donate-page">
-      <!-- Tabs -->
       <div class="donate-tabs">
         <button class="donate-tab active" data-tab="once" onclick="switchTab('once')">Быстрое пожертвование</button>
         <button class="donate-tab" data-tab="subscription" onclick="switchTab('subscription')">Подписка</button>
       </div>
 
-      <p style="font-size: 14px; color: #555; margin-bottom: 30px; line-height: 1.6;">Фонд сам выберет на какую инициативу направить ваше пожертвование. Разовое пожертвование.</p>
+      <p style="font-size: 14px; color: #555; margin-bottom: 30px; line-height: 1.6;">Фонд направит ваше пожертвование на актуальные программы помощи. Разовое пожертвование.</p>
 
       <h2 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Варианты пожертвования</h2>
       <p style="font-size: 14px; color: #999; margin-bottom: 20px;">Выберите сумму</p>
 
-      <!-- Amount Buttons -->
       <div class="donate-amounts">
         <button class="donate-amount" data-amount="325" onclick="selectAmount(this)">325 ₽</button>
         <button class="donate-amount" data-amount="750" onclick="selectAmount(this)">750 ₽</button>
@@ -54,36 +48,31 @@
         <button class="donate-amount" data-amount="3000" onclick="selectAmount(this)">3 000 ₽</button>
       </div>
 
-      <!-- Summary -->
       <div class="donate-summary">
         Вы выбрали разовое пожертвование в размере
         <strong id="donateAmount">0 ₽</strong>
       </div>
 
-      <!-- Pay Button -->
       <div style="text-align: center; margin-bottom: 16px;">
         <a href="#" class="btn btn--solid" style="width: 100%; justify-content: center;">Перейти к оплате</a>
       </div>
 
-      <!-- Legal -->
       <div class="donate-legal">
         Нажимая на кнопку «Перейти к оплате», вы соглашаетесь с
         <a href="/privacy-police/">политикой конфиденциальности</a> и
         <a href="/public-offer/">публичной офертой</a>.
       </div>
 
-      <p style="font-size: 12px; color: #999; text-align: center; margin-top: 20px;">Техническая поддержка</p>
+      <p style="font-size: 12px; color: #999; text-align: center; margin-top: 20px;">Техническая поддержка: <a href="mailto:info@andreevsky.ru">info@andreevsky.ru</a></p>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__nav">
-        <a href="/initiatives/" class="footer__nav-link">Инициативы</a>
+        <a href="/initiatives/" class="footer__nav-link">Программы</a>
         <a href="/news/" class="footer__nav-link">Новости</a>
-        <a href="/reports/" class="footer__nav-link">Отчеты</a>
-        <a href="/about/" class="footer__nav-link">О фонде</a>
+        <a href="/about/" class="footer__nav-link">О нас</a>
         <a href="/contacts/" class="footer__nav-link">Контакты</a>
         <a href="/privacy-police/" class="footer__nav-link">Политика конфиденциальности</a>
         <a href="/public-offer/" class="footer__nav-link">Публичная оферта</a>
@@ -93,26 +82,24 @@
       </div>
       <div class="footer__contacts">
         <div class="footer__social">
-          <a href="#" class="footer__social-icon">TG</a>
-          <a href="#" class="footer__social-icon">VK</a>
+          <a href="https://t.me/bf_andreevsky" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="Telegram">TG</a>
+          <a href="https://vk.ru/club238394053" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">VK</a>
         </div>
-        <a href="mailto:info@ewahelps.com" class="footer__contact-link">info@ewahelps.com</a>
-        <a href="tel:+79612167606" class="footer__contact-link">+7 (961) 216-76-06</a>
+        <a href="mailto:info@andreevsky.ru" class="footer__contact-link">info@andreevsky.ru</a>
+        <a href="tel:+79110501124" class="footer__contact-link">+7 (911) 050-11-24</a>
       </div>
     </div>
   </footer>
 
-  <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-banner__inner">
       <div>
         <div class="cookie-banner__title">Этот сайт использует cookie!</div>
         <div class="cookie-banner__text">Продолжая просматривать сайт, вы соглашаетесь на использование cookie в соответствии с политикой.</div>
       </div>
-      <button class="cookie-banner__btn" onclick="document.getElementById('cookieBanner').classList.add('hidden')">Принять и закрыть</button>
+      <button type="button" class="cookie-banner__btn">Принять и закрыть</button>
     </div>
   </div>
-
   <script>
     var selectedAmount = 0;
 
@@ -132,5 +119,6 @@
       document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
     }
   </script>
+  <script src="../js/site.js"></script>
 </body>
 </html>
