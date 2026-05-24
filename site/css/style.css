@@ -60,43 +60,15 @@ ul { list-style: none; }
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.header__logo-icon {
-  width: 42px;
-  height: 42px;
-  background: var(--red);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 800;
-  font-size: 14px;
-  line-height: 1;
-  transform: rotate(-10deg);
-}
-
-.header__logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.header__logo-name {
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--text);
-  line-height: 1.2;
-}
-
-.header__logo-subtitle {
-  font-size: 10px;
-  color: var(--text-light);
-  font-weight: 400;
-  letter-spacing: 0.5px;
+.header__logo-img {
+  display: block;
+  height: 48px;
+  width: auto;
+  max-width: min(272px, 42vw);
 }
 
 .header__nav {
