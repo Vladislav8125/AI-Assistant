@@ -15,7 +15,7 @@ FOOTER = """
   <footer class="footer">
     <div class="container">
       <div class="footer__nav">
-        <a href="{p}/initiatives/" class="footer__nav-link">Программы</a>
+        <a href="{p}/initiatives/" class="footer__nav-link">Проекты</a>
         <a href="{p}/news/" class="footer__nav-link">Новости</a>
         <a href="{p}/about/" class="footer__nav-link">О нас</a>
         <a href="{p}/contacts/" class="footer__nav-link">Контакты</a>
@@ -23,7 +23,7 @@ FOOTER = """
         <a href="{p}/public-offer/" class="footer__nav-link">Публичная оферта</a>
       </div>
       <div class="footer__logo">
-        <img src="{p}/images/logo-andreevskiy.png" alt="Андреевский" class="footer__logo-img" width="220" height="54">
+        <img src="{p}/images/logo-andreevskiy.png" alt="Андреевский" class="footer__logo-img">
       </div>
       <div class="footer__contacts">
         <div class="footer__social">
@@ -65,10 +65,10 @@ def head(title: str) -> str:
     <div class="container">
       <header class="header">
       <a href="{PREFIX}/" class="header__logo">
-        <img src="{PREFIX}/images/logo-andreevskiy.png" alt="Андреевский — С верой в душе на благо родины" class="header__logo-img" width="272" height="67">
+        <img src="{PREFIX}/images/logo-andreevskiy.png" alt="Андреевский — На благо Родины с верой в душе" class="header__logo-img">
       </a>
       <nav class="header__nav" id="nav">
-        <a href="{PREFIX}/initiatives/" class="header__nav-link">Программы</a>
+        <a href="{PREFIX}/initiatives/" class="header__nav-link">Проекты</a>
         <a href="{PREFIX}/news/" class="header__nav-link">Новости</a>
         <a href="{PREFIX}/about/" class="header__nav-link">О нас</a>
         <a href="{PREFIX}/contacts/" class="header__nav-link">Контакты</a>
