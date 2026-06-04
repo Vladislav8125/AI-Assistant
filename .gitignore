@@ -1,0 +1,4 @@
+
+# deploy secrets
+.ssh_askpass.sh
+dist/
