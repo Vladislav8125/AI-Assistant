@@ -180,11 +180,9 @@ def main() -> None:
       <h1 class="section__title pilgrimage-trip__heading">{html.escape(title)}</h1>
       <div class="pilgrimage-trip__intro modal__text">
         <p>{line1} {line2}</p>
-        <p>На карте ниже — все геоточки программы «Дороги Веры». Ниже перечислены святыни этой поездки. Для записи: <a href="mailto:info@andreevsky.ru">info@andreevsky.ru</a>.</p>
+        <p>Святыни маршрута перечислены ниже. Все геоточки программы — на <a href="{PREFIX}/pilgrimage/">общей карте</a>. Для записи: <a href="mailto:info@andreevsky.ru">info@andreevsky.ru</a>.</p>
       </div>
 """
-            + map_block(all_places, map_id=f"pilgrimage-map-{trip_id}")
-            + "\n"
             + place_cards(item["places"])
             + f"""
       <p class="pilgrimage-trip__cta"><a href="{PREFIX}/donate/" class="btn btn--solid">Поддержать проект</a></p>
@@ -192,7 +190,7 @@ def main() -> None:
   </div>
 """
             + FOOTER
-            + f'  <script src="{PREFIX}/js/pilgrimage-map.js"></script>\n</body>\n</html>\n'
+            + "\n</body>\n</html>\n"
         )
         (SITE / str(trip_id) / "index.html").write_text(page, encoding="utf-8")
         print(f"Wrote pilgrimage/{trip_id}/index.html")

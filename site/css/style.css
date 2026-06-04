@@ -1652,3 +1652,21 @@ ul { list-style: none; }
 .pilgrimage-trip__cta {
   margin-top: 40px;
 }
+
+.home-partner-notice {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  padding: 20px 24px;
+  background: var(--bg-gray);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.home-partner-notice__text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-gray);
+  margin: 0;
+}
+
+
