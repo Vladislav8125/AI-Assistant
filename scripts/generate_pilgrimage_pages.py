@@ -23,7 +23,7 @@ FOOTER = """
         <a href="{p}/public-offer/" class="footer__nav-link">Публичная оферта</a>
       </div>
       <div class="footer__logo">
-        <img src="{p}/images/logo-andreevskiy.jpg" alt="Андреевский" class="footer__logo-img">
+        <img src="{p}/images/logo-andreevskiy.png" alt="Андреевский" class="footer__logo-img">
       </div>
       <div class="footer__contacts">
         <div class="footer__social">
@@ -65,7 +65,7 @@ def head(title: str) -> str:
     <div class="container">
       <header class="header">
       <a href="{PREFIX}/" class="header__logo">
-        <img src="{PREFIX}/images/logo-andreevskiy.jpg" alt="Андреевский — На благо Родины с верой в душе" class="header__logo-img">
+        <img src="{PREFIX}/images/logo-andreevskiy.png" alt="Андреевский — На благо Родины с верой в душе" class="header__logo-img">
       </a>
       <nav class="header__nav" id="nav">
         <a href="{PREFIX}/initiatives/" class="header__nav-link">Проекты</a>
