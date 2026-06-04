@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="/AI-Assistant/css/style.css">
 </head>
 <body>
-  <div class="container">
-    <header class="header">
+  <div class="header-bar">
+    <div class="container">
+      <header class="header">
       <a href="/AI-Assistant/" class="header__logo">
         <img src="/AI-Assistant/images/logo-andreevskiy.png" alt="Андреевский — С верой в душе на благо родины" class="header__logo-img" width="272" height="67">
       </a>
@@ -25,7 +26,24 @@
         <span></span><span></span><span></span>
       </div>
     </header>
+    </div>
   </div>
+
+  <div class="container">
+    <a href="/AI-Assistant/" class="donate-page__back">← перейти на главную</a>
+    <div class="pay-page">
+      <h1 class="pay-page__title">Пожертвование</h1>
+      <p class="pay-page__lead">Отсканируйте QR-код в приложении вашего банка через Систему быстрых платежей (СБП). Средства поступят на счёт благотворительного фонда «Андреевский».</p>
+      <div class="pay-page__qr-wrap">
+        <img src="/AI-Assistant/images/donate-qr.png" alt="QR-код для пожертвования через СБП" class="pay-page__qr" width="280" height="280">
+      </div>
+      <p class="pay-page__lead" style="margin-top: 24px; font-size: 13px;">Нажимая на оплату, вы соглашаетесь с <a href="/AI-Assistant/privacy-police/" style="color: var(--red); text-decoration: underline;">политикой конфиденциальности</a> и <a href="/AI-Assistant/public-offer/" style="color: var(--red); text-decoration: underline;">публичной офертой</a>.</p>
+      <p style="font-size: 12px; color: #999; margin-top: 20px;">Техническая поддержка: <a href="mailto:info@andreevsky.ru">info@andreevsky.ru</a></p>
+    </div>
+  </div>
+
+  <!--
+  Прежняя страница выбора суммы — сохранена для будущего использования
 
   <div class="container">
     <a href="../" class="donate-page__back">← перейти на главную</a>
@@ -66,6 +84,27 @@
     </div>
   </div>
 
+  <script>
+    var selectedAmount = 0;
+
+    function selectAmount(btn) {
+      document.querySelectorAll('.donate-amount').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+      selectedAmount = parseInt(btn.getAttribute('data-amount'));
+      document.getElementById('donateAmount').textContent = selectedAmount.toLocaleString('ru-RU') + ' ₽';
+    }
+
+    function switchTab(tab) {
+      document.querySelectorAll('.donate-tab').forEach(function(t) {
+        t.classList.remove('active');
+      });
+      document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
+    }
+  </script>
+  -->
+
   <footer class="footer">
     <div class="container">
       <div class="footer__nav">
@@ -99,25 +138,6 @@
       <button type="button" class="cookie-banner__btn">Принять и закрыть</button>
     </div>
   </div>
-  <script>
-    var selectedAmount = 0;
-
-    function selectAmount(btn) {
-      document.querySelectorAll('.donate-amount').forEach(function(b) {
-        b.classList.remove('active');
-      });
-      btn.classList.add('active');
-      selectedAmount = parseInt(btn.getAttribute('data-amount'));
-      document.getElementById('donateAmount').textContent = selectedAmount.toLocaleString('ru-RU') + ' ₽';
-    }
-
-    function switchTab(tab) {
-      document.querySelectorAll('.donate-tab').forEach(function(t) {
-        t.classList.remove('active');
-      });
-      document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
-    }
-  </script>
   <script src="/AI-Assistant/js/site.js"></script>
 </body>
 </html>

@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="/AI-Assistant/css/style.css">
 </head>
 <body>
-  <div class="container">
-    <header class="header">
+  <div class="header-bar">
+    <div class="container">
+      <header class="header">
       <a href="/AI-Assistant/" class="header__logo">
         <img src="/AI-Assistant/images/logo-andreevskiy.png" alt="Андреевский — С верой в душе на благо родины" class="header__logo-img" width="272" height="67">
       </a>
@@ -25,6 +26,7 @@
         <span></span><span></span><span></span>
       </div>
     </header>
+    </div>
   </div>
 
   <div class="container">
@@ -54,7 +56,7 @@
             <div class="card__title">Возрождение Храма Святой Троицы</div>
             <p class="card__text">Реставрация памятника архитектуры в деревне Андрианово. Возвращаем святыню к жизни для молитв, паломничества и сохранения истории.</p>
             <div class="card__buttons">
-              <a href="/AI-Assistant/initiatives/" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="#" class="btn btn--outline btn--small" data-modal-open="modal-church">Подробнее</a>
               <a href="/AI-Assistant/donate/" class="btn btn--solid btn--small">Помочь</a>
             </div>
           </div>
@@ -68,7 +70,7 @@
             <div class="card__title">Помощь ветеранам</div>
             <p class="card__text">Медицинская и психологическая помощь, пансионы, трудоустройство, ИИ-сервис «Собеседник». Социокультурная адаптация ветеранов, участников СВО и их семей через спорт, творчество и общение.</p>
             <div class="card__buttons">
-              <a href="/AI-Assistant/initiatives/" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="https://t.me/andreevskyblago_bot/svo_veterans" class="btn btn--outline btn--small" target="_blank" rel="noopener noreferrer">Подробнее</a>
               <a href="/AI-Assistant/donate/" class="btn btn--solid btn--small">Помочь</a>
             </div>
           </div>
@@ -82,7 +84,7 @@
             <div class="card__title">Молитва по соглашению</div>
             <p class="card__text">Цифровой проект с ИИ-подбором молитв, чат-ботом и группами для совместной молитвы.</p>
             <div class="card__buttons">
-              <a href="/AI-Assistant/initiatives/" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="https://t.me/andreevskyblago_bot/prayers" class="btn btn--outline btn--small" target="_blank" rel="noopener noreferrer">Подробнее</a>
               <a href="/AI-Assistant/donate/" class="btn btn--solid btn--small">Помочь</a>
             </div>
           </div>
@@ -96,7 +98,7 @@
             <div class="card__title">Паломнические поездки «Дороги Веры»</div>
             <p class="card__text">Лекции, паломничества, волонтёрские акции для молодёжи и всех, кто разделяет традиционные ценности.</p>
             <div class="card__buttons">
-              <a href="/AI-Assistant/initiatives/" class="btn btn--outline btn--small">Подробнее</a>
+              <a href="#" class="btn btn--outline btn--small" data-modal-open="modal-pilgrimage">Подробнее</a>
               <a href="/AI-Assistant/donate/" class="btn btn--solid btn--small">Помочь</a>
             </div>
           </div>
@@ -147,8 +149,71 @@
       <button type="button" class="cookie-banner__btn">Принять и закрыть</button>
     </div>
   </div>
+<div class="modal-overlay" id="modal-church" data-modal-overlay>
+    <div class="modal" role="dialog" aria-labelledby="modal-church-title">
+      <button type="button" class="modal__close" data-modal-close aria-label="Закрыть">&times;</button>
+      <div class="modal__video">
+        <div style="position: relative; padding-top: 56.25%; width: 100%"><iframe src="https://kinescope.io/embed/516oZ38fPsKHjaNczVxqBz" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;" frameborder="0" allowfullscreen style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe></div>
+      </div>
+      <div class="modal__body">
+        <h2 class="modal__title" id="modal-church-title">Возрождение Храма Святой Троицы</h2>
+        <div class="modal__text">
+          <p>Сотрудники Благотворительного фонда «Андреевский» посетили деревню Андрианово, чтобы оценить состояние храма Пресвятой Троицы и масштаб будущих восстановительных работ.</p>
+          <p>Построенная в 1831 году, величественная церковь в неоготическом стиле сегодня находится в запустении. Храм пережил войну и годы забвения, но сейчас остаётся без богослужений, а местным жителям приходится ездить в Тосно, чтобы попасть на службу или помолиться.</p>
+          <p>Для села действующий храм — жизненная необходимость. Мы продолжаем сбор средств на восстановление святыни: каждое пожертвование помогает приблизить день, когда в Андрианово вновь зазвучит молитва.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-pilgrimage" data-modal-overlay>
+    <div class="modal" role="dialog" aria-labelledby="modal-pilgrimage-title">
+      <button type="button" class="modal__close" data-modal-close aria-label="Закрыть">&times;</button>
+      <div class="modal__body">
+        <h2 class="modal__title" id="modal-pilgrimage-title">Паломнические поездки «Дороги Веры»</h2>
+        <div class="pilgrimage-list">
+          <article class="pilgrimage-item">
+            <h3 class="pilgrimage-item__title">Святыни Новгорода</h3>
+            <p class="pilgrimage-item__desc">Двухдневный маршрут по древним храмам и монастырям.<br>Экскурсии, молебны и встреча с настоятелями приходов.</p>
+            <a href="/AI-Assistant/pilgrimage/1/" class="pilgrimage-item__link">Страница поездки</a>
+          </article>
+          <article class="pilgrimage-item">
+            <h3 class="pilgrimage-item__title">Псково-Печерский монастырь</h3>
+            <p class="pilgrimage-item__desc">Паломничество к мощам преподобных отцов Печерских.<br>Погружение в тишину Успенского храма и пещерного комплекса.</p>
+            <a href="/AI-Assistant/pilgrimage/2/" class="pilgrimage-item__link">Страница поездки</a>
+          </article>
+          <article class="pilgrimage-item">
+            <h3 class="pilgrimage-item__title">Валаам — остров веры</h3>
+            <p class="pilgrimage-item__desc">Поездка на остров в Ладожском озере к Спасо-Преображенскому монастырю.<br>Паромная переправа, прогулки по скитам и общая трапеза.</p>
+            <a href="/AI-Assistant/pilgrimage/3/" class="pilgrimage-item__link">Страница поездки</a>
+          </article>
+          <article class="pilgrimage-item">
+            <h3 class="pilgrimage-item__title">Дивеево, Город Богородицы</h3>
+            <p class="pilgrimage-item__desc">Посещение Троицкого собора и канавки прп. Серафима Саровского.<br>Молодёжная программа с лекциями о святости в повседневной жизни.</p>
+            <a href="/AI-Assistant/pilgrimage/4/" class="pilgrimage-item__link">Страница поездки</a>
+          </article>
+          <article class="pilgrimage-item">
+            <h3 class="pilgrimage-item__title">Оптина пустынь</h3>
+            <p class="pilgrimage-item__desc">Знакомство с наследием старцев и келейной традицией.<br>Чтение духовной литературы и беседы с братией обители.</p>
+            <a href="/AI-Assistant/pilgrimage/5/" class="pilgrimage-item__link">Страница поездки</a>
+          </article>
+          <article class="pilgrimage-item">
+            <h3 class="pilgrimage-item__title">Соловецкий архипелаг</h3>
+            <p class="pilgrimage-item__desc">Летняя экспедиция на Соловки с паломническим штабом фонда.<br>Морская переправа, музей и богослужения в Спасо-Преображенском соборе.</p>
+            <a href="/AI-Assistant/pilgrimage/6/" class="pilgrimage-item__link">Страница поездки</a>
+          </article>
+          <article class="pilgrimage-item">
+            <h3 class="pilgrimage-item__title">Свияжск и Казань</h3>
+            <p class="pilgrimage-item__desc">Комбинированный маршрут: остров-град Свияжск и соборы Казани.<br>Волонтёрский день у храма и мастер-класс по иконописи.</p>
+            <a href="/AI-Assistant/pilgrimage/7/" class="pilgrimage-item__link">Страница поездки</a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="/AI-Assistant/js/config.js"></script>
   <script src="/AI-Assistant/js/home.js"></script>
   <script src="/AI-Assistant/js/site.js"></script>
+  <script src="/AI-Assistant/js/modals.js"></script>
 </body>
 </html>

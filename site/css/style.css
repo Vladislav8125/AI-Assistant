@@ -1049,10 +1049,165 @@ ul { list-style: none; }
     overflow: auto;
   }
 
-  .header__nav.open .header__nav-link {
+  .header-bar .header__nav.open .header__nav-link {
     font-size: 18px;
     padding: 8px 0;
+    color: #ffffff;
   }
+}
+
+/* ===================== MODALS ===================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 20000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px var(--container-padding);
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s, visibility 0.25s;
+}
+
+.modal-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--bg);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 800px;
+  margin: auto 0;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: var(--bg-gray);
+  border-radius: 50%;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text);
+  z-index: 2;
+  transition: background 0.2s;
+}
+
+.modal__close:hover {
+  background: #e8e8e8;
+}
+
+.modal__body {
+  padding: 32px;
+}
+
+.modal__title {
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-right: 48px;
+}
+
+.modal__video {
+  margin: -32px -32px 24px;
+  border-radius: 24px 24px 0 0;
+  overflow: hidden;
+}
+
+.modal__text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-gray);
+}
+
+.modal__text p + p {
+  margin-top: 14px;
+}
+
+.pilgrimage-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pilgrimage-item {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.pilgrimage-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pilgrimage-item__title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pilgrimage-item__desc {
+  font-size: 14px;
+  color: var(--text-gray);
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.pilgrimage-item__link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--red);
+  text-decoration: underline;
+}
+
+.pilgrimage-item__link:hover {
+  color: var(--red-hover);
+}
+
+/* ===================== PAY / QR PAGE ===================== */
+.pay-page {
+  max-width: 480px;
+  margin: 40px auto 60px;
+  text-align: center;
+}
+
+.pay-page__title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.pay-page__lead {
+  font-size: 15px;
+  color: var(--text-gray);
+  line-height: 1.55;
+  margin-bottom: 32px;
+}
+
+.pay-page__qr-wrap {
+  background: #1a2d5a;
+  border-radius: 24px;
+  padding: 32px 24px;
+  display: inline-block;
+}
+
+.pay-page__qr {
+  max-width: 280px;
+  margin: 0 auto;
+  border-radius: 16px;
+  border: 3px solid var(--red);
+  background: #fff;
 }
 
 /* ===================== REPORTS SECTION ===================== */
