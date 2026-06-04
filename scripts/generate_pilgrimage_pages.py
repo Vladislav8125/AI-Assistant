@@ -30,7 +30,7 @@ FOOTER = """
           <a href="https://t.me/bf_andreevsky" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="Telegram">TG</a>
           <a href="https://vk.ru/club238394053" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">VK</a>
         </div>
-        <a href="mailto:info@andreevsky.ru" class="footer__contact-link">info@andreevsky.ru</a>
+        <a href="mailto:info@andreevskyfund.ru" class="footer__contact-link">info@andreevskyfund.ru</a>
         <a href="tel:+79110501124" class="footer__contact-link">+7 (911) 050-11-24</a>
       </div>
     </div>
@@ -195,7 +195,7 @@ def main() -> None:
       <h1 class="section__title pilgrimage-trip__heading">{html.escape(title)}</h1>
       <div class="pilgrimage-trip__intro modal__text">
         <p>{line1} {line2}</p>
-        <p>На картах ниже — геоточки святынь маршрута. Все маршруты на <a href="{PREFIX}/pilgrimage/">общей карте программы</a>. Для записи: <a href="mailto:info@andreevsky.ru">info@andreevsky.ru</a>.</p>
+        <p>На картах ниже — геоточки святынь маршрута. Все маршруты на <a href="{PREFIX}/pilgrimage/">общей карте программы</a>. Для записи: <a href="mailto:info@andreevskyfund.ru">info@andreevskyfund.ru</a>.</p>
       </div>
 """
             + place_cards(item["places"])
