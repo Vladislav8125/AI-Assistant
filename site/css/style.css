@@ -52,14 +52,14 @@ ul { list-style: none; }
 
 .header__logo-img {
   display: block;
-  max-height: 26px;
+  max-height: 104px;
   width: auto;
   height: auto;
 }
 
 .footer__logo-img {
   display: block;
-  max-height: 44px;
+  max-height: 176px;
   width: auto;
   height: auto;
 }
