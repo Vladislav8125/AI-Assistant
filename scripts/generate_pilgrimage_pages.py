@@ -3,6 +3,7 @@
 
 import html
 import json
+from urllib.parse import quote
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -112,13 +113,27 @@ def map_block(places: list, map_id: str = "pilgrimage-map") -> str:
 """
 
 
+def yandex_map_urls(address: str) -> tuple[str, str]:
+    q = quote(address)
+    widget = f"https://yandex.ru/map-widget/v1/?text={q}&z=15&lang=ru_RU"
+    external = f"https://yandex.ru/maps/?text={q}&z=15"
+    return widget, external
+
+
 def place_cards(places: list) -> str:
     parts = ['      <div class="pilgrimage-places">']
     for p in places:
+        widget, external = yandex_map_urls(p["address"])
+        name = html.escape(p["name"])
+        addr = html.escape(p["address"])
         parts.append(
             f"""        <div class="pilgrimage-place">
-          <h3 class="pilgrimage-place__title">{html.escape(p["name"])}</h3>
-          <p class="pilgrimage-place__address">{html.escape(p["address"])}</p>
+          <h3 class="pilgrimage-place__title">{name}</h3>
+          <p class="pilgrimage-place__address">{addr}</p>
+          <div class="pilgrimage-place__map">
+            <iframe src="{widget}" width="100%" height="320" frameborder="0" allowfullscreen="true" title="Карта: {name}"></iframe>
+          </div>
+          <a href="{external}" class="pilgrimage-place__map-link" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Картах</a>
         </div>"""
         )
     parts.append("      </div>")
@@ -180,7 +195,7 @@ def main() -> None:
       <h1 class="section__title pilgrimage-trip__heading">{html.escape(title)}</h1>
       <div class="pilgrimage-trip__intro modal__text">
         <p>{line1} {line2}</p>
-        <p>Святыни маршрута перечислены ниже. Все геоточки программы — на <a href="{PREFIX}/pilgrimage/">общей карте</a>. Для записи: <a href="mailto:info@andreevsky.ru">info@andreevsky.ru</a>.</p>
+        <p>На картах ниже — геоточки святынь маршрута. Все маршруты на <a href="{PREFIX}/pilgrimage/">общей карте программы</a>. Для записи: <a href="mailto:info@andreevsky.ru">info@andreevsky.ru</a>.</p>
       </div>
 """
             + place_cards(item["places"])

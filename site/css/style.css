@@ -1242,7 +1242,10 @@ ul { list-style: none; }
 }
 
 .pay-page__qr {
-  max-width: 280px;
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
   margin: 0 auto;
   border-radius: 16px;
   border: 3px solid var(--red);
@@ -1630,7 +1633,32 @@ ul { list-style: none; }
   font-size: 14px;
   color: var(--text-gray);
   line-height: 1.55;
-  margin-bottom: 0;
+  margin-bottom: 14px;
+}
+
+
+.pilgrimage-place__map {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background: var(--bg-gray);
+}
+
+.pilgrimage-place__map iframe {
+  display: block;
+  width: 100%;
+  min-height: 280px;
+}
+
+.pilgrimage-place__map-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--red);
+  text-decoration: underline;
+}
+
+.pilgrimage-place__map-link:hover {
+  color: var(--red-hover);
 }
 
 .pilgrimage-map__title {
