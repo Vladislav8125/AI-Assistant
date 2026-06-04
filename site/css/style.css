@@ -49,6 +49,27 @@ ul { list-style: none; }
 }
 
 /* ===================== HEADER ===================== */
+.header-bar {
+  background: #000000;
+  width: 100%;
+}
+
+.header-bar .header__nav-link {
+  color: #ffffff;
+}
+
+.header-bar .header__nav-link:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.header-bar .header__nav-link.active {
+  color: var(--red);
+}
+
+.header-bar .mobile-menu-toggle span {
+  background: #ffffff;
+}
+
 .header {
   padding: 25px 0 20px;
   display: flex;
@@ -143,7 +164,7 @@ ul { list-style: none; }
 }
 
 .header__ewa-btn {
-  background: #333;
+  background: var(--red);
   color: #fff;
   padding: 10px 24px;
   border-radius: 20px;
@@ -156,7 +177,7 @@ ul { list-style: none; }
   transition: background 0.2s;
 }
 
-.header__ewa-btn:hover { background: #444; }
+.header__ewa-btn:hover { background: var(--red-hover); }
 
 /* ===================== HERO BANNER ===================== */
 .hero-banner {
@@ -1032,14 +1053,14 @@ ul { list-style: none; }
   .header__nav, .header__right { display: none; }
   .mobile-menu-toggle { display: flex; }
 
-  .header__nav.open {
+  .header-bar .header__nav.open {
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background: var(--bg-gray);
+    background: #000000;
     padding: 30px;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
@@ -1069,12 +1090,14 @@ ul { list-style: none; }
   overflow-y: auto;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.25s, visibility 0.25s;
 }
 
 .modal-overlay.is-open {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .modal {
