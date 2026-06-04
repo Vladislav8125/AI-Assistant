@@ -1630,31 +1630,23 @@ ul { list-style: none; }
   font-size: 14px;
   color: var(--text-gray);
   line-height: 1.55;
-  margin-bottom: 14px;
+  margin-bottom: 0;
 }
 
-.pilgrimage-place__map {
+.pilgrimage-map__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.pilgrimage-map-unified {
+  width: 100%;
+  max-width: 960px;
+  height: 450px;
   border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 10px;
+  margin-bottom: 32px;
   background: var(--bg-gray);
-}
-
-.pilgrimage-place__map iframe {
-  display: block;
-  width: 100%;
-  min-height: 280px;
-}
-
-.pilgrimage-place__map-link {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--red);
-  text-decoration: underline;
-}
-
-.pilgrimage-place__map-link:hover {
-  color: var(--red-hover);
 }
 
 .pilgrimage-trip__cta {
