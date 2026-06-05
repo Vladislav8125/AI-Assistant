@@ -1644,6 +1644,30 @@ ul { list-style: none; }
   margin-bottom: 32px;
 }
 
+.page-video {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.page-video__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.page-video__embed {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-gray);
+}
+
+.page-video__embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 360px;
+  aspect-ratio: 16 / 9;
+}
+
 .pilgrimage-places {
   display: flex;
   flex-direction: column;

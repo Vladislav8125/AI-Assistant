@@ -1,5 +1,5 @@
 (function () {
-  var PREFIX = typeof window.SITE_PREFIX === 'string' ? window.SITE_PREFIX : '/AI-Assistant';
+  var PREFIX = window.SITE_PREFIX || '/AI-Assistant';
   var DATA_URL = PREFIX + '/data/news.json';
 
   function escapeHtml(str) {
@@ -90,6 +90,7 @@
               '<h1 class="news-post__title">' + escapeHtml(item.title) + '</h1>' +
               '<time class="news-post__date" datetime="' + escapeHtml(item.date) + '">' + formatDate(item.date) + '</time>' +
             '</header>' +
+            renderVkVideo(item.video) +
             '<div class="news-post__body prose">' + renderMarkdown(item.body) + '</div>' +
             '<footer class="news-post__footer">' +
               '<a class="btn btn--outline" href="' + PREFIX + '/news/">← Все новости</a>' +
