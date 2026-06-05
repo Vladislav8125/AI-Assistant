@@ -93,8 +93,6 @@
           <button type="button" id="save-token-btn" class="admin-btn admin-btn--ghost">Сохранить токен</button>
           <h3>Пароль админки</h3>
           <p>Задаётся в файле <code>site/data/admin-config.json</code> в репозитории. По умолчанию: <code>andreevsky-admin</code> — смените после первого входа.</p>
-          <h3>Альтернатива</h3>
-          <p>Можно также использовать <a href="/AI-Assistant/admin/">Decap CMS</a> (требует настройки GitHub OAuth).</p>
         </div>
       </section>
     </main>
@@ -102,8 +100,14 @@
     <div id="toast" class="admin-toast" hidden></div>
   </div>
 
-  <script src="/AI-Assistant/js/config.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
-  <script src="/AI-Assistant/admin/admin-panel.js"></script>
+  <script>
+    (function () {
+      var path = window.location.pathname;
+      var marker = '/admin/';
+      var i = path.indexOf(marker);
+      window.SITE_PREFIX = i > 0 ? path.slice(0, i) : '';
+    })();
+  </script>
+  <script src="admin-panel.js?v=2"></script>
 </body>
 </html>
