@@ -1,6 +1,14 @@
 (function () {
-  // '' is valid (site at domain root); || treats '' as missing and breaks andreevskyfund.ru
-  var PREFIX = typeof window.SITE_PREFIX === 'string' ? window.SITE_PREFIX : '/AI-Assistant';
+  function resolvePrefix() {
+    if (typeof window.SITE_PREFIX === 'string') return window.SITE_PREFIX;
+    var path = window.location.pathname;
+    var marker = '/admin/';
+    var i = path.indexOf(marker);
+    if (i > 0) return path.slice(0, i);
+    return '';
+  }
+
+  var PREFIX = resolvePrefix();
   var AUTH_KEY = 'andreevsky_admin_auth';
   var TOKEN_KEY = 'andreevsky_github_token';
 
@@ -33,6 +41,62 @@
     err.hidden = !msg;
   }
 
+  function uniqueUrls(urls) {
+    var seen = {};
+    return urls.filter(function (u) {
+      if (!u || seen[u]) return false;
+      seen[u] = true;
+      return true;
+    });
+  }
+
+  function fetchJson(url) {
+    return fetch(url, { cache: 'no-store' }).then(function (r) {
+      if (!r.ok) throw new Error(url + ' HTTP ' + r.status);
+      return r.json();
+    });
+  }
+
+  function fetchFirst(urls) {
+    var chain = Promise.reject();
+    urls.forEach(function (url) {
+      chain = chain.catch(function () {
+        return fetchJson(url);
+      });
+    });
+    return chain;
+  }
+
+  function dataUrl(name) {
+    return uniqueUrls([
+      PREFIX + '/data/' + name,
+      '/data/' + name,
+      '../data/' + name,
+      '/AI-Assistant/data/' + name
+    ]);
+  }
+
+  function loadConfig() {
+    return fetchFirst(dataUrl('admin-config.json')).then(function (c) {
+      config = c;
+      return c;
+    });
+  }
+
+  function loadNews() {
+    return fetchFirst(dataUrl('news.json')).then(function (d) {
+      newsData = d;
+      return d;
+    });
+  }
+
+  function loadSettings() {
+    return fetchFirst(dataUrl('site-settings.json')).then(function (d) {
+      settingsData = d;
+      return d;
+    });
+  }
+
   function slugify(text) {
     var map = {
       а: 'a', б: 'b', в: 'v', г: 'g', д: 'd', е: 'e', ё: 'e', ж: 'zh', з: 'z',
@@ -48,36 +112,6 @@
       .slice(0, 60) || 'news-' + Date.now();
   }
 
-  function loadConfig() {
-    return fetch(PREFIX + '/data/admin-config.json').then(function (r) {
-      if (!r.ok) throw new Error('config ' + r.status);
-      return r.json();
-    }).then(function (c) {
-      config = c;
-      return c;
-    });
-  }
-
-  function loadNews() {
-    return fetch(PREFIX + '/data/news.json').then(function (r) {
-      if (!r.ok) throw new Error('news ' + r.status);
-      return r.json();
-    }).then(function (d) {
-      newsData = d;
-      return d;
-    });
-  }
-
-  function loadSettings() {
-    return fetch(PREFIX + '/data/site-settings.json').then(function (r) {
-      if (!r.ok) throw new Error('settings ' + r.status);
-      return r.json();
-    }).then(function (d) {
-      settingsData = d;
-      return d;
-    });
-  }
-
   function getFileSha(path, token) {
     return fetch('https://api.github.com/repos/' + config.github.owner + '/' + config.github.repo + '/contents/' + path + '?ref=' + config.github.branch, {
       headers: { Authorization: 'Bearer ' + token, Accept: 'application/vnd.github+json' }
@@ -91,15 +125,14 @@
   }
 
   function putFile(path, contentObj, message, token) {
-    var pathKey = path;
-    return getFileSha(pathKey, token).then(function (sha) {
+    return getFileSha(path, token).then(function (sha) {
       var body = {
         message: message,
         content: btoa(unescape(encodeURIComponent(JSON.stringify(contentObj, null, 2)))),
         branch: config.github.branch
       };
       if (sha) body.sha = sha;
-      return fetch('https://api.github.com/repos/' + config.github.owner + '/' + config.github.repo + '/contents/' + pathKey, {
+      return fetch('https://api.github.com/repos/' + config.github.owner + '/' + config.github.repo + '/contents/' + path, {
         method: 'PUT',
         headers: {
           Authorization: 'Bearer ' + token,
@@ -171,27 +204,60 @@
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
   }
 
+  function ensureEasyMde() {
+    if (typeof EasyMDE !== 'undefined') return Promise.resolve();
+    return new Promise(function (resolve, reject) {
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css';
+      document.head.appendChild(link);
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js';
+      script.onload = resolve;
+      script.onerror = function () {
+        reject(new Error('Не удалось загрузить редактор'));
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  function initEditor() {
+    if (bodyEditor) return Promise.resolve();
+    return ensureEasyMde().then(function () {
+      bodyEditor = new EasyMDE({
+        element: $('news-body'),
+        spellChecker: false,
+        status: false,
+        minHeight: '280px',
+        toolbar: ['bold', 'italic', 'heading', 'heading-smaller', '|', 'quote', 'unordered-list', 'ordered-list', '|', 'link', 'preview', 'guide']
+      });
+    });
+  }
+
   function openEditor(id) {
     editingId = id || null;
     $('news-editor').hidden = false;
     $('delete-news-btn').hidden = !id;
-
-    if (id) {
-      var item = newsData.items.find(function (n) { return n.id === id; });
-      if (!item) return;
-      $('editor-heading').textContent = 'Редактирование';
-      $('news-title').value = item.title;
-      $('news-date').value = item.date;
-      $('news-excerpt').value = item.excerpt || '';
-      bodyEditor.value(item.body || '');
-    } else {
-      $('editor-heading').textContent = 'Новая новость';
-      $('news-title').value = '';
-      $('news-date').value = new Date().toISOString().slice(0, 10);
-      $('news-excerpt').value = '';
-      bodyEditor.value('');
-    }
-    $('news-editor').scrollIntoView({ behavior: 'smooth' });
+    initEditor().then(function () {
+      if (id) {
+        var item = newsData.items.find(function (n) { return n.id === id; });
+        if (!item) return;
+        $('editor-heading').textContent = 'Редактирование';
+        $('news-title').value = item.title;
+        $('news-date').value = item.date;
+        $('news-excerpt').value = item.excerpt || '';
+        bodyEditor.value(item.body || '');
+      } else {
+        $('editor-heading').textContent = 'Новая новость';
+        $('news-title').value = '';
+        $('news-date').value = new Date().toISOString().slice(0, 10);
+        $('news-excerpt').value = '';
+        bodyEditor.value('');
+      }
+      $('news-editor').scrollIntoView({ behavior: 'smooth' });
+    }).catch(function () {
+      toast('Редактор недоступен. Проверьте интернет или VPN.', true);
+    });
   }
 
   function closeEditor() {
@@ -200,6 +266,10 @@
   }
 
   function saveNewsLocal() {
+    if (!bodyEditor) {
+      toast('Редактор ещё не загружен', true);
+      return;
+    }
     var title = $('news-title').value.trim();
     if (!title) {
       toast('Укажите заголовок', true);
@@ -260,17 +330,6 @@
     $('app').hidden = false;
   }
 
-  function initEditor() {
-    if (bodyEditor || typeof EasyMDE === 'undefined') return;
-    bodyEditor = new EasyMDE({
-      element: $('news-body'),
-      spellChecker: false,
-      status: false,
-      minHeight: '280px',
-      toolbar: ['bold', 'italic', 'heading', 'heading-smaller', '|', 'quote', 'unordered-list', 'ordered-list', '|', 'link', 'preview', 'guide']
-    });
-  }
-
   function bindTabs() {
     document.querySelectorAll('.admin-tabs__btn').forEach(function (btn) {
       btn.addEventListener('click', function () {
@@ -305,7 +364,6 @@
   function bootApp() {
     if (appBooted) return;
     appBooted = true;
-    initEditor();
     renderNewsList();
     fillSettingsForm();
     bindTabs();
@@ -329,7 +387,7 @@
       showLoginError('');
       showApp();
       loadAppData().catch(function () {
-        toast('Не удалось загрузить данные', true);
+        toast('Не удалось загрузить данные новостей', true);
       });
     } else {
       showLoginError('Неверный пароль');
