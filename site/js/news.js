@@ -1,5 +1,5 @@
 (function () {
-  var PREFIX = window.SITE_PREFIX || '/AI-Assistant';
+  var PREFIX = typeof window.SITE_PREFIX === 'string' ? window.SITE_PREFIX : '/AI-Assistant';
   var DATA_URL = PREFIX + '/data/news.json';
 
   function escapeHtml(str) {
@@ -25,6 +25,28 @@
     return items.slice().sort(function (a, b) {
       return (b.date || '').localeCompare(a.date || '');
     });
+  }
+
+  function renderVkVideo(url) {
+    if (!url) return '';
+    var match = String(url).match(/video(-?\d+)_(\d+)/);
+    if (!match) return '';
+    var oid = match[1];
+    if (oid.charAt(0) !== '-') oid = '-' + oid;
+    var id = match[2];
+    var list = '';
+    var listMatch = String(url).match(/[?&]list=([^&]+)/);
+    if (listMatch) list = '&list=' + encodeURIComponent(listMatch[1]);
+    return (
+      '<div class="page-video">' +
+        '<div class="page-video__embed">' +
+          '<iframe src="https://vk.com/video_ext.php?oid=' + encodeURIComponent(oid) +
+            '&id=' + encodeURIComponent(id) + '&hd=2' + list + '" width="100%" height="360" ' +
+            'frameborder="0" allow="encrypted-media; fullscreen; picture-in-picture;" ' +
+            'allowfullscreen title="Видео"></iframe>' +
+        '</div>' +
+      '</div>'
+    );
   }
 
   function renderMarkdown(md) {
