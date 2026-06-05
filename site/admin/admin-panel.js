@@ -1,5 +1,6 @@
 (function () {
-  var PREFIX = window.SITE_PREFIX || '/AI-Assistant';
+  // '' is valid (site at domain root); || treats '' as missing and breaks andreevskyfund.ru
+  var PREFIX = typeof window.SITE_PREFIX === 'string' ? window.SITE_PREFIX : '/AI-Assistant';
   var AUTH_KEY = 'andreevsky_admin_auth';
   var TOKEN_KEY = 'andreevsky_github_token';
 
@@ -8,6 +9,7 @@
   var settingsData = {};
   var bodyEditor = null;
   var editingId = null;
+  var appBooted = false;
 
   function $(id) {
     return document.getElementById(id);
@@ -15,12 +17,20 @@
 
   function toast(msg, isError) {
     var el = $('toast');
+    if (!el) return;
     el.textContent = msg;
     el.style.background = isError ? '#c8394b' : '#333';
     el.hidden = false;
     setTimeout(function () {
       el.hidden = true;
     }, 4000);
+  }
+
+  function showLoginError(msg) {
+    var err = $('login-error');
+    if (!err) return;
+    err.textContent = msg || '';
+    err.hidden = !msg;
   }
 
   function slugify(text) {
@@ -40,6 +50,7 @@
 
   function loadConfig() {
     return fetch(PREFIX + '/data/admin-config.json').then(function (r) {
+      if (!r.ok) throw new Error('config ' + r.status);
       return r.json();
     }).then(function (c) {
       config = c;
@@ -49,6 +60,7 @@
 
   function loadNews() {
     return fetch(PREFIX + '/data/news.json').then(function (r) {
+      if (!r.ok) throw new Error('news ' + r.status);
       return r.json();
     }).then(function (d) {
       newsData = d;
@@ -58,6 +70,7 @@
 
   function loadSettings() {
     return fetch(PREFIX + '/data/site-settings.json').then(function (r) {
+      if (!r.ok) throw new Error('settings ' + r.status);
       return r.json();
     }).then(function (d) {
       settingsData = d;
@@ -248,6 +261,7 @@
   }
 
   function initEditor() {
+    if (bodyEditor || typeof EasyMDE === 'undefined') return;
     bodyEditor = new EasyMDE({
       element: $('news-body'),
       spellChecker: false,
@@ -268,56 +282,77 @@
     });
   }
 
+  function bindAppHandlers() {
+    $('logout-btn').addEventListener('click', function () {
+      sessionStorage.removeItem(AUTH_KEY);
+      location.reload();
+    });
+    $('add-news-btn').addEventListener('click', function () { openEditor(null); });
+    $('save-news-btn').addEventListener('click', saveNewsLocal);
+    $('cancel-news-btn').addEventListener('click', closeEditor);
+    $('delete-news-btn').addEventListener('click', deleteNews);
+    $('save-settings-btn').addEventListener('click', saveSettingsLocal);
+    $('save-github-btn').addEventListener('click', publishAll);
+    $('save-token-btn').addEventListener('click', function () {
+      var t = $('github-token').value.trim();
+      if (t) {
+        localStorage.setItem(TOKEN_KEY, t);
+        toast('Токен сохранён в браузере');
+      }
+    });
+  }
+
+  function bootApp() {
+    if (appBooted) return;
+    appBooted = true;
+    initEditor();
+    renderNewsList();
+    fillSettingsForm();
+    bindTabs();
+    bindAppHandlers();
+    var savedToken = localStorage.getItem(TOKEN_KEY);
+    if (savedToken) $('github-token').value = savedToken;
+  }
+
+  function loadAppData() {
+    return Promise.all([loadNews(), loadSettings()]).then(bootApp);
+  }
+
   function tryLogin() {
+    if (!config) {
+      showLoginError('Конфигурация ещё не загружена. Подождите или обновите страницу.');
+      return;
+    }
     var pwd = $('login-password').value;
     if (pwd === config.password) {
       sessionStorage.setItem(AUTH_KEY, '1');
+      showLoginError('');
       showApp();
-      $('login-error').hidden = true;
+      loadAppData().catch(function () {
+        toast('Не удалось загрузить данные', true);
+      });
     } else {
-      $('login-error').textContent = 'Неверный пароль';
-      $('login-error').hidden = false;
+      showLoginError('Неверный пароль');
     }
   }
 
+  function bindLoginHandlers() {
+    $('login-btn').addEventListener('click', tryLogin);
+    $('login-password').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') tryLogin();
+    });
+  }
+
   function init() {
+    bindLoginHandlers();
     loadConfig().then(function () {
       if (sessionStorage.getItem(AUTH_KEY) === '1') {
         showApp();
+        return loadAppData();
       }
-      return Promise.all([loadNews(), loadSettings()]);
-    }).then(function () {
-      initEditor();
-      renderNewsList();
-      fillSettingsForm();
-      bindTabs();
-
-      var savedToken = localStorage.getItem(TOKEN_KEY);
-      if (savedToken) $('github-token').value = savedToken;
-
-      $('login-btn').addEventListener('click', tryLogin);
-      $('login-password').addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') tryLogin();
-      });
-      $('logout-btn').addEventListener('click', function () {
-        sessionStorage.removeItem(AUTH_KEY);
-        location.reload();
-      });
-      $('add-news-btn').addEventListener('click', function () { openEditor(null); });
-      $('save-news-btn').addEventListener('click', saveNewsLocal);
-      $('cancel-news-btn').addEventListener('click', closeEditor);
-      $('delete-news-btn').addEventListener('click', deleteNews);
-      $('save-settings-btn').addEventListener('click', saveSettingsLocal);
-      $('save-github-btn').addEventListener('click', publishAll);
-      $('save-token-btn').addEventListener('click', function () {
-        var t = $('github-token').value.trim();
-        if (t) {
-          localStorage.setItem(TOKEN_KEY, t);
-          toast('Токен сохранён в браузере');
-        }
-      });
+      return null;
     }).catch(function () {
-      toast('Не удалось загрузить конфигурацию', true);
+      showLoginError('Не удалось загрузить конфигурацию. Обновите страницу (Ctrl+F5).');
     });
   }
 

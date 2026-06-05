@@ -1,5 +1,5 @@
 (function () {
-  var PREFIX = window.SITE_PREFIX || '/AI-Assistant';
+  var PREFIX = typeof window.SITE_PREFIX === 'string' ? window.SITE_PREFIX : '/AI-Assistant';
 
   document.addEventListener('DOMContentLoaded', function () {
     fetch(PREFIX + '/data/site-settings.json')
