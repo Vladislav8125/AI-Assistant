@@ -2,7 +2,7 @@
 
 ## Быстрый старт
 
-1. Откройте **https://vladislav8125.github.io/AI-Assistant/admin/panel.html**
+1. Откройте **https://vladislav8125.github.io/admin/panel.html**
 2. Пароль по умолчанию: `andreevsky-admin` (смените в `site/data/admin-config.json`)
 3. Во вкладке **Справка** сохраните [GitHub Token](https://github.com/settings/tokens) с правом `repo`
 4. Редактируйте новости и главную страницу
@@ -24,6 +24,6 @@
 
 ## Decap CMS (альтернатива)
 
-Адрес: https://vladislav8125.github.io/AI-Assistant/admin/
+Адрес: https://vladislav8125.github.io/admin/
 
 Требует настройки [GitHub OAuth App](https://github.com/settings/developers) для репозитория `Vladislav8125/AI-Assistant`.

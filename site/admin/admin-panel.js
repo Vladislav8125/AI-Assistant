@@ -72,7 +72,7 @@
       PREFIX + '/data/' + name,
       '/data/' + name,
       '../data/' + name,
-      '/AI-Assistant/data/' + name
+      '/data/' + name
     ]);
   }
 

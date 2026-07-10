@@ -8,7 +8,7 @@ backend:
 locale: ru
 
 media_folder: site/images/uploads
-public_folder: /AI-Assistant/images/uploads
+public_folder: /images/uploads
 
 collections:
   - name: news
